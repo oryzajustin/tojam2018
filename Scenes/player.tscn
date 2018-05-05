@@ -44,4 +44,13 @@ autostart = false
 
 shape = SubResource( 1 )
 
+[node name="trap_container" type="Node" parent="." index="6"]
+
+[node name="trap_timer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 
