@@ -1,1 +1,0 @@
-# TOJam 2018: NINJAM
