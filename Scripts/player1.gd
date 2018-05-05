@@ -4,15 +4,17 @@ const UP = Vector2(0, -1)
 const DOWN = Vector2(0, 1)
 const LEFT = Vector2(-1, 0)
 const RIGHT = Vector2(1, 0)
-const MAX_SPEED = 300
+const MAX_SPEED = 250
 const MAX_TRAP = 2
 
 var speed = 0
+var idle = true
 var velocity = Vector2()
 var direction = Vector2()
 var curr_num_trap = 0
 
 onready var player = get_node("Sprite")
+onready var animation_player = get_node("Sprite/AnimationPlayer")
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("shuriken_container")
 onready var trap = preload("res://Scenes/trap.tscn")
@@ -35,23 +37,52 @@ func _process(delta):
 			print(curr_num_trap)
 
 func _physics_process(delta):
-	speed = MAX_SPEED
 	if Input.is_action_pressed("player1_up"):
+		speed = MAX_SPEED
 		direction = UP
-		rotation = 3 * PI/2
+		idle = false
+		#rotation = 3 * PI/2
 	elif Input.is_action_pressed("player1_down"):
+		speed = MAX_SPEED
 		direction = DOWN
-		rotation = PI/2
+		idle = false
+		#rotation = PI/2
 	elif Input.is_action_pressed("player1_left"):
+		speed = MAX_SPEED
 		direction = LEFT
-		rotation = PI
+		idle = false
+		#rotation = PI
 	elif Input.is_action_pressed("player1_right"):
+		speed = MAX_SPEED
 		direction = RIGHT
-		rotation = 2 * PI
+		#idle = false
+		#rotation = 2 * PI
 	else:
 		speed = 0
+		idle = true
+	#idle(direction, idle)
 	velocity = speed * direction * delta
-	move_and_collide(velocity)
+	if Input.is_action_just_pressed("player1_right") or Input.is_action_just_released("player1_right") or Input.is_action_just_pressed("player1_left") or Input.is_action_just_released("player1_left") or Input.is_action_just_pressed("player1_up") or Input.is_action_just_released("player1_up") or Input.is_action_just_pressed("player1_down") or Input.is_action_just_released("player1_down"):
+		animation(direction, speed)
+	move_and_collide(velocity) 
+
+func animation(dir, speed):
+	if dir == LEFT and speed != 0:
+		animation_player.play("walk_left")
+	elif dir == LEFT and speed == 0:
+		animation_player.play("idle_left")
+	if dir == RIGHT and speed != 0:
+		animation_player.play("walk_right")
+	elif dir == RIGHT and speed == 0:
+		animation_player.play("idle_right")
+	if dir == UP and speed != 0:
+		animation_player.play("walk_up")
+	elif dir == UP and speed == 0:
+		animation_player.play("idle_up")
+	if dir == DOWN and speed != 0:
+		animation_player.play("walk_down")
+	elif dir == DOWN and speed == 0:
+		animation_player.play("idle_down")
 
 func place_trap():
 	if curr_num_trap < MAX_TRAP:

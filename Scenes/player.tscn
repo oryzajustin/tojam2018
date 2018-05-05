@@ -1,15 +1,186 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/player1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/playertest.png" type="Texture" id=2]
+[ext_resource path="res://Assets/ninja_sprites.png" type="Texture" id=2]
 [ext_resource path="res://Assets/ground.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "idle_down"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 10 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "idle_left"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 20, 20 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "idle_right"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "idle_up"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 30, 30 ]
+}
+
+[sub_resource type="Animation" id=10]
+
+resource_name = "player_death"
+length = 3.5
+loop = false
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.08, 0.5, 0.8, 2.59, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 40, 41, 42, 44, 45, 49 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "walk_down"
+length = 0.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 11, 15 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "walk_left"
+length = 0.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 21, 25 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "walk_right"
+length = 0.3
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1, 5 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "walk_up"
+length = 0.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 31, 35 ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 23.6973, 23.5625 )
+extents = Vector2( 4.32294, 5.22943 )
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -19,7 +190,31 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 0, 0.397842 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
+vframes = 10
+hframes = 10
+frame = 44
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/idle_down = SubResource( 5 )
+anims/idle_left = SubResource( 7 )
+anims/idle_right = SubResource( 3 )
+anims/idle_up = SubResource( 9 )
+anims/player_death = SubResource( 10 )
+anims/walk_down = SubResource( 4 )
+anims/walk_left = SubResource( 6 )
+anims/walk_right = SubResource( 2 )
+anims/walk_up = SubResource( 8 )
+blend_times = [  ]
 
 [node name="shuriken_container" type="Node" parent="." index="1"]
 
@@ -29,6 +224,7 @@ position = Vector2( 30.0053, -0.358629 )
 
 [node name="facing" type="Sprite" parent="." index="3"]
 
+visible = false
 position = Vector2( 29.5886, -0.675867 )
 scale = Vector2( 0.428514, 0.428514 )
 texture = ExtResource( 3 )
@@ -42,6 +238,7 @@ autostart = false
 
 [node name="hitbox" type="CollisionShape2D" parent="." index="5"]
 
+visible = false
 shape = SubResource( 1 )
 
 [node name="trap_container" type="Node" parent="." index="6"]
