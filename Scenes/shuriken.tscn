@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/shuriken.gd" type="Script" id=1]
 [ext_resource path="res://Assets/shuriken_placeholder.png" type="Texture" id=2]
 
-[node name="Projectile" type="KinematicBody2D" groups=[
+[node name="Shuriken" type="KinematicBody2D" groups=[
 "projectiles",
 ]]
 
