@@ -19,7 +19,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-speed = 300
+speed = 380
 
 [node name="Sprite2" type="Sprite" parent="." index="0"]
 

@@ -4,10 +4,9 @@ const UP = Vector2(0, -1)
 const DOWN = Vector2(0, 1)
 const LEFT = Vector2(-1, 0)
 const RIGHT = Vector2(1, 0)
-const MAX_SPEED = 350
+const MAX_SPEED = 300
 
 var speed = 0
-var rot = 0
 var velocity = Vector2()
 var direction = Vector2()
 onready var player = get_node("Sprite")
@@ -22,22 +21,21 @@ func _process(delta):
 		throw()
 
 func _physics_process(delta):
-	var is_moving = Input.is_action_pressed("player1_checkmove")
-	if is_moving:
-		speed = MAX_SPEED
-		if Input.is_action_pressed("player1_up"):
-			direction = UP
-			rot = rot * delta
-		elif Input.is_action_pressed("player1_down"):
-			direction = DOWN
-		elif Input.is_action_pressed("player1_left"):
-			direction = LEFT
-		elif Input.is_action_pressed("player1_right"):
-			direction = RIGHT
+	speed = MAX_SPEED
+	if Input.is_action_pressed("player1_up"):
+		direction = UP
+		rotation = 3 * PI/2
+	elif Input.is_action_pressed("player1_down"):
+		direction = DOWN
+		rotation = PI/2
+	elif Input.is_action_pressed("player1_left"):
+		direction = LEFT
+		rotation = PI
+	elif Input.is_action_pressed("player1_right"):
+		direction = RIGHT
+		rotation = 2 * PI
 	else:
 		speed = 0
-	
-	rotation = rot
 	velocity = speed * direction * delta
 	move_and_collide(velocity)
 

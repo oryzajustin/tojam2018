@@ -1,7 +1,7 @@
 extends Area2D
 
 var vel = Vector2()
-export var speed = 300
+export var speed = 380
 
 
 func _ready():
