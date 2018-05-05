@@ -11,8 +11,8 @@ const MAX_SHURIKEN = 3
 
 # Variables
 var speed = 0
-var velocity = Vector2()
-var direction = Vector2()
+var velocity = Vector2(0, 0)
+var direction = Vector2(0, 0)
 
 # Player inventory on spawn
 var curr_num_trap = 1
@@ -20,11 +20,7 @@ var curr_num_shuriken = 1
 
 onready var parent = get_owner()
 onready var player = get_node("Sprite")
-
-###
 onready var anim = get_node("AnimationPlayer")
-###
-
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("Shuriken Container")
 onready var shuriken_timer = get_node("Shuriken Timer")
@@ -33,6 +29,8 @@ onready var trap_container = get_node("Trap Container")
 onready var trap_timer = get_node("Trap Timer")
 
 func _ready():
+	# Hacky fix for the way the ninjas spawn...
+	direction = LEFT
 	set_physics_process(true)
 
 func _process(delta):
@@ -90,7 +88,14 @@ func throw_shuriken():
 		shuriken_timer.start()
 		var s = shuriken.instance()
 		shuriken_container.add_child(s)
-		s.start_at(rotation, get_node("Throw Start").global_position)
+		if direction == UP:
+			s.start_at(3 * PI/2, get_node("Up").global_position)
+		elif direction == DOWN:
+			s.start_at(PI/2, get_node("Down").global_position)
+		elif direction == LEFT:
+			s.start_at(PI, get_node("Left").global_position)
+		elif direction == RIGHT:
+			s.start_at(2 * PI, get_node("Right").global_position)
 
 func pickup_shuriken(pickup):
 	print("Going to try to pick up shuriken")
@@ -105,7 +110,14 @@ func place_trap():
 		trap_timer.start()
 		var t = trap.instance()
 		trap_container.add_child(t)
-		t.set_trap(position)
+		if direction == UP:
+			t.set_trap(get_node("Up").global_position)
+		elif direction == DOWN:
+			t.set_trap(get_node("Down").global_position)
+		elif direction == LEFT:
+			t.set_trap(get_node("Left").global_position)
+		elif direction == RIGHT:
+			t.set_trap(get_node("Right").global_position)
 
 func defuse_trap(defused_trap):
 	print("Going to try to defuse trap")

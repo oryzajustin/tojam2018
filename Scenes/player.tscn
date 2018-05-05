@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -13,32 +13,47 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Throw Start" type="Position2D" parent="." index="0"]
-
-position = Vector2( 39.8618, 3.97364e-08 )
-scale = Vector2( 0.986176, 1 )
-
-[node name="Shuriken Container" type="Node" parent="." index="1"]
-
-[node name="Shuriken Timer" type="Timer" parent="." index="2"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = false
-
-[node name="Trap Container" type="Node" parent="." index="3"]
-
-[node name="Trap Timer" type="Timer" parent="." index="4"]
-
-process_mode = 1
-wait_time = 1.0
-one_shot = true
-autostart = false
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( -10, -10, 10, -10, 10, 20, -10, 20, -10, -10 )
+
+[node name="Up" type="Position2D" parent="." index="1"]
+
+position = Vector2( 0, -30 )
+scale = Vector2( 0.986176, 1 )
+
+[node name="Down" type="Position2D" parent="." index="2"]
+
+position = Vector2( 0, 30 )
+scale = Vector2( 0.986176, 1 )
+
+[node name="Left" type="Position2D" parent="." index="3"]
+
+position = Vector2( -30, 0 )
+scale = Vector2( 0.986176, 1 )
+
+[node name="Right" type="Position2D" parent="." index="4"]
+
+position = Vector2( 30, 0 )
+scale = Vector2( 0.986176, 1 )
+
+[node name="Shuriken Container" type="Node" parent="." index="5"]
+
+[node name="Shuriken Timer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = true
+autostart = false
+
+[node name="Trap Container" type="Node" parent="." index="7"]
+
+[node name="Trap Timer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
 
 
