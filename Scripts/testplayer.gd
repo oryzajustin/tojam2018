@@ -65,3 +65,8 @@ func throw():
 	var s = shuriken.instance()
 	shuriken_container.add_child(s)
 	s.start_at(rotation, get_node("throw_start").global_position)
+	
+func death():
+	print("This guy has died!!! Do respawn...")
+	# Teleport to jail instead of deleting...
+	self.queue_free()
