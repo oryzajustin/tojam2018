@@ -9,10 +9,12 @@ const MAX_SPEED = 300
 var speed = 0
 var velocity = Vector2()
 var direction = Vector2()
+
 onready var player = get_node("Sprite")
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("shuriken_container")
 onready var shuriken_timer = get_node("shuriken_timer")
+onready var hitbox = get_node("hitbox")
 
 func _ready():
 	set_physics_process(true)
