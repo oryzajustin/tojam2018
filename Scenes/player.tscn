@@ -9,29 +9,36 @@
 custom_solver_bias = 0.0
 extents = Vector2( 23.6973, 23.5625 )
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0" groups=[
+"players",
+]]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 2
+collision_mask = 29
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="shuriken_container" type="Node" parent="." index="1"]
+[node name="facing" type="Sprite" parent="Sprite" index="0"]
 
-[node name="throw_start" type="Position2D" parent="." index="2"]
-
-position = Vector2( 30.0053, -0.358629 )
-
-[node name="facing" type="Sprite" parent="." index="3"]
-
-position = Vector2( 29.5886, -0.675867 )
+position = Vector2( 50, 0 )
 scale = Vector2( 0.428514, 0.428514 )
 texture = ExtResource( 3 )
+
+[node name="throw_start" type="Position2D" parent="." index="1"]
+
+position = Vector2( 50, 0 )
+
+[node name="hitbox" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
+
+[node name="shuriken_container" type="Node" parent="." index="3"]
 
 [node name="shuriken_timer" type="Timer" parent="." index="4"]
 
@@ -40,13 +47,9 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="hitbox" type="CollisionShape2D" parent="." index="5"]
+[node name="trap_container" type="Node" parent="." index="5"]
 
-shape = SubResource( 1 )
-
-[node name="trap_container" type="Node" parent="." index="6"]
-
-[node name="trap_timer" type="Timer" parent="." index="7"]
+[node name="trap_timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 1.0

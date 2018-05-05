@@ -6,11 +6,13 @@ const LEFT = Vector2(-1, 0)
 const RIGHT = Vector2(1, 0)
 const MAX_SPEED = 300
 const MAX_TRAP = 2
+const MAX_SHURIKEN = 3
 
 var speed = 0
 var velocity = Vector2()
 var direction = Vector2()
-var curr_num_trap = 0
+var curr_num_trap = 1
+var curr_num_shuriken = 4
 
 onready var player = get_node("Sprite")
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
@@ -27,12 +29,10 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("player1_throw"):
 		if shuriken_timer.get_time_left() == 0:
-			throw()
+			throw_shuriken()
 	if Input.is_action_pressed("player1_trap"):
 		if trap_timer.get_time_left() == 0:
 			place_trap()
-			curr_num_trap += 1
-			print(curr_num_trap)
 
 func _physics_process(delta):
 	speed = MAX_SPEED
@@ -54,14 +54,24 @@ func _physics_process(delta):
 	move_and_collide(velocity)
 
 func place_trap():
-	if curr_num_trap < MAX_TRAP:
+	if curr_num_trap > 0:
+		curr_num_trap -= 1
 		trap_timer.start()
 		var t = trap.instance()
 		trap_container.add_child(t)
 		t.set_trap(position)
 
-func throw():
-	shuriken_timer.start()
-	var s = shuriken.instance()
-	shuriken_container.add_child(s)
-	s.start_at(rotation, get_node("throw_start").global_position)
+func throw_shuriken():
+	if curr_num_shuriken > 0:
+		curr_num_shuriken -= 1
+		shuriken_timer.start()
+		var s = shuriken.instance()
+		shuriken_container.add_child(s)
+		s.start_at(rotation, get_node("throw_start").global_position)
+
+func pickup_shuriken(pickup):
+	print("Going to try to pick up shuriken")
+	if curr_num_shuriken < MAX_SHURIKEN:
+		print("Picked up shuriken!!")
+		curr_num_shuriken += 1
+		pickup.queue_free()
