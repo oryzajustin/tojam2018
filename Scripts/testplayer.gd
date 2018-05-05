@@ -25,10 +25,10 @@ func _ready():
 	set_physics_process(true)
 
 func _process(delta):
-	if Input.is_action_pressed("player1_throw"):
+	if Input.is_action_pressed("test_throw"):
 		if shuriken_timer.get_time_left() == 0:
 			throw()
-	if Input.is_action_pressed("player1_trap"):
+	if Input.is_action_pressed("test_trap"):
 		if trap_timer.get_time_left() == 0:
 			place_trap()
 			curr_num_trap += 1
@@ -36,16 +36,16 @@ func _process(delta):
 
 func _physics_process(delta):
 	speed = MAX_SPEED
-	if Input.is_action_pressed("player1_up"):
+	if Input.is_action_pressed("test_up"):
 		direction = UP
 		rotation = 3 * PI/2
-	elif Input.is_action_pressed("player1_down"):
+	elif Input.is_action_pressed("test_down"):
 		direction = DOWN
 		rotation = PI/2
-	elif Input.is_action_pressed("player1_left"):
+	elif Input.is_action_pressed("test_left"):
 		direction = LEFT
 		rotation = PI
-	elif Input.is_action_pressed("player1_right"):
+	elif Input.is_action_pressed("test_right"):
 		direction = RIGHT
 		rotation = 2 * PI
 	else:
