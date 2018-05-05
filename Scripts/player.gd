@@ -20,6 +20,11 @@ var curr_num_shuriken = 1
 
 onready var parent = get_owner()
 onready var player = get_node("Sprite")
+
+###
+onready var anim = get_node("AnimationPlayer")
+###
+
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("Shuriken Container")
 onready var shuriken_timer = get_node("Shuriken Timer")
@@ -39,23 +44,47 @@ func _process(delta):
 			place_trap()
 
 func _physics_process(delta):
-	speed = MAX_SPEED
+	# speed = MAX_SPEED
 	if Input.is_action_pressed(parent.getActionUpKey()):
+		speed = MAX_SPEED
 		direction = UP
-		rotation = 3 * PI/2
+		# rotation = 3 * PI/2
 	elif Input.is_action_pressed(parent.getActionDownKey()):
+		speed = MAX_SPEED
 		direction = DOWN
-		rotation = PI/2
+		# rotation = PI/2
 	elif Input.is_action_pressed(parent.getActionLeftKey()):
+		speed = MAX_SPEED
 		direction = LEFT
-		rotation = PI
+		# rotation = PI
 	elif Input.is_action_pressed(parent.getActionRightKey()):
+		speed = MAX_SPEED
 		direction = RIGHT
-		rotation = 2 * PI
+		# rotation = 2 * PI
 	else:
 		speed = 0
 	velocity = speed * direction * delta
+	if Input.is_action_just_pressed(parent.getActionRightKey()) or Input.is_action_just_released(parent.getActionRightKey()) or Input.is_action_just_pressed(parent.getActionLeftKey()) or Input.is_action_just_released(parent.getActionLeftKey()) or Input.is_action_just_pressed(parent.getActionUpKey()) or Input.is_action_just_released(parent.getActionUpKey()) or Input.is_action_just_pressed(parent.getActionDownKey()) or Input.is_action_just_released(parent.getActionDownKey()):
+		animation(direction, speed)
 	move_and_collide(velocity)
+	
+func animation(dir, speed):
+	if dir == LEFT and speed != 0:
+		anim.play("walk_left")
+	elif dir == LEFT and speed == 0:
+		anim.play("idle_left")
+	if dir == RIGHT and speed != 0:
+		anim.play("walk_right")
+	elif dir == RIGHT and speed == 0:
+		anim.play("idle_right")
+	if dir == DOWN and speed != 0:
+		anim.play("walk_down")
+	elif dir == DOWN and speed == 0:
+		anim.play("idle_down")
+	if dir == UP and speed != 0:
+		anim.play("walk_up")
+	elif dir == UP and speed == 0:
+		anim.play("idle_up")
 	
 func throw_shuriken():
 	if curr_num_shuriken > 0:
@@ -90,4 +119,5 @@ func defuse_trap(defused_trap):
 func death():
 	print("This guy has died!!! Do respawn...")
 	# Teleport to jail instead of deleting...
-	self.queue_free()
+	anim.play("player_death")
+	# self.queue_free()
