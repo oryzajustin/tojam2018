@@ -44,23 +44,18 @@ func _process(delta):
 			place_trap()
 
 func _physics_process(delta):
-	# speed = MAX_SPEED
 	if Input.is_action_pressed(parent.getActionUpKey()):
 		speed = MAX_SPEED
 		direction = UP
-		# rotation = 3 * PI/2
 	elif Input.is_action_pressed(parent.getActionDownKey()):
 		speed = MAX_SPEED
 		direction = DOWN
-		# rotation = PI/2
 	elif Input.is_action_pressed(parent.getActionLeftKey()):
 		speed = MAX_SPEED
 		direction = LEFT
-		# rotation = PI
 	elif Input.is_action_pressed(parent.getActionRightKey()):
 		speed = MAX_SPEED
 		direction = RIGHT
-		# rotation = 2 * PI
 	else:
 		speed = 0
 	velocity = speed * direction * delta
@@ -73,14 +68,17 @@ func animation(dir, speed):
 		anim.play("walk_left")
 	elif dir == LEFT and speed == 0:
 		anim.play("idle_left")
+		
 	if dir == RIGHT and speed != 0:
 		anim.play("walk_right")
 	elif dir == RIGHT and speed == 0:
 		anim.play("idle_right")
+		
 	if dir == DOWN and speed != 0:
 		anim.play("walk_down")
 	elif dir == DOWN and speed == 0:
 		anim.play("idle_down")
+		
 	if dir == UP and speed != 0:
 		anim.play("walk_up")
 	elif dir == UP and speed == 0:
@@ -118,6 +116,6 @@ func defuse_trap(defused_trap):
 
 func death():
 	print("This guy has died!!! Do respawn...")
+	get_node("CollisionPolygon2D").disabled = true
 	# Teleport to jail instead of deleting...
 	anim.play("player_death")
-	# self.queue_free()

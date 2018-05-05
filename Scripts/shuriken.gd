@@ -27,3 +27,4 @@ func _on_Pickup_Radius_body_entered(body):
 	if vel == Vector2(0, 0): # Check if shuriken is stationary
 		if body.is_in_group("players"):
 			body.pickup_shuriken(self)
+
