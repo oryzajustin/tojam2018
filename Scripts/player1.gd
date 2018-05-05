@@ -12,13 +12,15 @@ var direction = Vector2()
 onready var player = get_node("Sprite")
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("shuriken_container")
+onready var shuriken_timer = get_node("shuriken_timer")
 
 func _ready():
 	set_physics_process(true)
 
 func _process(delta):
 	if Input.is_action_pressed("player1_throw"):
-		throw()
+		if shuriken_timer.get_time_left() == 0:
+			throw()
 
 func _physics_process(delta):
 	speed = MAX_SPEED
@@ -40,6 +42,7 @@ func _physics_process(delta):
 	move_and_collide(velocity)
 
 func throw():
+	shuriken_timer.start()
 	var s = shuriken.instance()
 	shuriken_container.add_child(s)
 	s.start_at(rotation, get_node("throw_start").global_position)
