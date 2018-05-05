@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="Ninjam"
+run/main_scene="res://Scenes/game.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -31,4 +32,5 @@ player1_checkmove=[ Object(InputEventKey,"resource_local_to_scene":false,"resour
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
