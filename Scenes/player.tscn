@@ -1,9 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/playertest.png" type="Texture" id=2]
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -14,34 +13,23 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-position = Vector2( -1.19209e-07, -1.66893e-06 )
-scale = Vector2( 0.833333, 0.833333 )
-texture = ExtResource( 2 )
-
-[node name="Throw Start" type="Position2D" parent="." index="1"]
+[node name="Throw Start" type="Position2D" parent="." index="0"]
 
 position = Vector2( 39.8618, 3.97364e-08 )
 scale = Vector2( 0.986176, 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+[node name="Shuriken Container" type="Node" parent="." index="1"]
 
-build_mode = 0
-polygon = PoolVector2Array( 20, -20, 20, 20, -20, 20, -20, -20, 20, -20 )
-
-[node name="Shuriken Container" type="Node" parent="." index="3"]
-
-[node name="Shuriken Timer" type="Timer" parent="." index="4"]
+[node name="Shuriken Timer" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="Trap Container" type="Node" parent="." index="5"]
+[node name="Trap Container" type="Node" parent="." index="3"]
 
-[node name="Trap Timer" type="Timer" parent="." index="6"]
+[node name="Trap Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
