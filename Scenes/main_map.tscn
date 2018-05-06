@@ -3,13 +3,12 @@
 [ext_resource path="res://Scripts/bgmusic.gd" type="Script" id=1]
 [ext_resource path="res://Resources/game_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Audio/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Audio/Bumblebee loop.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Audio/Mr. Blue Sky NES.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Mr. Blue Sky NES.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Bumblebee loop.ogg" type="AudioStream" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -46,7 +45,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="bg2" type="AudioStreamPlayer" parent="." index="2"]
+[node name="bg3" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
 volume_db = -10.0
@@ -54,7 +53,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="bg3" type="AudioStreamPlayer" parent="." index="3"]
+[node name="bg2" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 5 )
 volume_db = -10.0
