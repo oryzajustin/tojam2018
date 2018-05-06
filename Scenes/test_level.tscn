@@ -13,25 +13,18 @@
 
 position = Vector2( -8.12073, 1 )
 
-[node name="Sprite" parent="Map" index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 88.0123, 81.2221 )
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
-
-[node name="Ninja1" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Ninja1" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 78, 78 )
 
-[node name="Ninja2" parent="." index="2" instance=ExtResource( 4 )]
+[node name="Ninja2" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 524, 78 )
 
-[node name="Ninja3" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Ninja3" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 77, 525 )
 
-[node name="Ninja4" parent="." index="4" instance=ExtResource( 6 )]
+[node name="Ninja4" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 526, 524 )
-
-
