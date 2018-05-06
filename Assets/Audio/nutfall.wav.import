@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/nutfall.wav-dc597db454054797f3ebf83abd89c4dc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/nutfall.wav"
+source_md5="23d30a0331c14c677673a978d169cdb2"
+
+dest_files=[ "res://.import/nutfall.wav-dc597db454054797f3ebf83abd89c4dc.sample" ]
+dest_md5="9d65bf441c7dcef9a1d67eac20200d80"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Audio/Electric - Shock.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/swish_3.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/coin8.wav" type="AudioStream" id=4]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",
@@ -76,5 +79,33 @@ process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = false
+
+[node name="zap" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="throw" type="AudioStreamPlayer2D" parent="." index="12"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="." index="13"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
