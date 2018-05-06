@@ -9,75 +9,422 @@
 [ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=8]
 
-[node name="Four Player Map" type="Node2D"]
+[node name="Four Player Map" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Map" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="Spawn1" type="Position2D" parent="Map" index="1"]
+position = Vector2( -20, -10 )
+scale = Vector2( 2.75, 2.75 )
+_sections_unfolded = [ "Transform" ]
 
-position = Vector2( 250, 200 )
+[node name="Walls" type="Node2D" parent="Map" index="0"]
+
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Walls" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Walls/StaticBody2D" index="0"]
+
+position = Vector2( 0, 3.57628e-07 )
+build_mode = 0
+polygon = PoolVector2Array( 7.27273, 18.1818, 472.727, 18.1818, 472.727, 3.63636, 7.27273, 3.63636 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map/Walls" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Walls/StaticBody2D2" index="0"]
+
+position = Vector2( 1.09091, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 7.27273, 14.5455, 7.27273, 301.818, 14.5455, 301.818, 14.5455, 14.5455 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Map/Walls" index="2"]
+
+editor/display_folded = true
+position = Vector2( 381.818, -3.63636 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Walls/StaticBody2D4" index="0"]
+
+position = Vector2( 75.2727, -3.6364 )
+build_mode = 0
+polygon = PoolVector2Array( 7.27273, 14.5455, 7.27273, 301.818, 14.5455, 301.818, 14.5455, 14.5455 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Map/Walls" index="3"]
+
+editor/display_folded = true
+position = Vector2( 0, -0.363636 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/Walls/StaticBody2D3" index="0"]
+
+position = Vector2( 0, -1.81824 )
+build_mode = 0
+polygon = PoolVector2Array( 465.455, 258.182, 14.5455, 258.182, 14.5455, 276.364, 465.455, 276.364 )
+
+[node name="L Wall" type="Node2D" parent="Map" index="5"]
+
+editor/display_folded = true
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall2" type="Node2D" parent="Map" index="6"]
+
+editor/display_folded = true
+position = Vector2( 480.276, 273.034 )
+rotation = 3.13946
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall2/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall3" type="Node2D" parent="Map" index="7"]
+
+position = Vector2( 0.494696, 172.149 )
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall3/StaticBody2D" index="0"]
+
+position = Vector2( -1.48091, 100.11 )
+rotation = -1.57321
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall4" type="Node2D" parent="Map" index="8"]
+
+position = Vector2( 377.936, 1.48404 )
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall4/StaticBody2D" index="0"]
+
+position = Vector2( 103.072, 0.296187 )
+rotation = 1.57638
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall5" type="Node2D" parent="Map" index="9"]
+
+editor/display_folded = true
+position = Vector2( 128.617, 144.634 )
+rotation = 3.1422
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall5/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall6" type="Node2D" parent="Map" index="10"]
+
+editor/display_folded = true
+position = Vector2( 94.081, 144.262 )
+rotation = -1.56223
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall6" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall6/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall7" type="Node2D" parent="Map" index="11"]
+
+editor/display_folded = true
+position = Vector2( 128.06, 127.797 )
+rotation = 1.56957
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall7/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall8" type="Node2D" parent="Map" index="12"]
+
+editor/display_folded = true
+position = Vector2( 96.0559, 128.562 )
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall8/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall9" type="Node2D" parent="Map" index="13"]
+
+editor/display_folded = true
+position = Vector2( 385.207, 145.343 )
+rotation = 3.13508
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall9" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall9/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall10" type="Node2D" parent="Map" index="14"]
+
+editor/display_folded = true
+position = Vector2( 384.641, 128.653 )
+rotation = 1.56484
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall10" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall10/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall11" type="Node2D" parent="Map" index="15"]
+
+editor/display_folded = true
+position = Vector2( 351.682, 144.354 )
+rotation = -1.57299
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall11" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall11/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="L Wall12" type="Node2D" parent="Map" index="16"]
+
+editor/display_folded = true
+position = Vector2( 352.619, 127.847 )
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/L Wall12" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/L Wall12/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31.8888, 47.7291, 47.733, 47.3388, 47.9671, 31.8849, 63.9674, 31.8849, 64.2016, 65.5245, 31.8888, 65.6806 )
+
+[node name="Spawn1" type="Position2D" parent="Map" index="17"]
+
+editor/display_folded = true
+position = Vector2( 32.7273, 32.7273 )
+scale = Vector2( 0.363636, 0.363636 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ninja1" parent="Map/Spawn1" index="0" instance=ExtResource( 3 )]
 
-[node name="Spawn2" type="Position2D" parent="Map" index="2"]
+[node name="Spawn2" type="Position2D" parent="Map" index="18"]
 
-position = Vector2( 1250, 200 )
+editor/display_folded = true
+position = Vector2( 447.273, 32.7273 )
+scale = Vector2( 0.363636, 0.363636 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ninja2" parent="Map/Spawn2" index="0" instance=ExtResource( 4 )]
 
-[node name="Spawn3" type="Position2D" parent="Map" index="3"]
+[node name="Spawn3" type="Position2D" parent="Map" index="19"]
 
-position = Vector2( 250, 650 )
+editor/display_folded = true
+position = Vector2( 32.7273, 240 )
+scale = Vector2( 0.363636, 0.363636 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ninja3" parent="Map/Spawn3" index="0" instance=ExtResource( 5 )]
 
-[node name="Spawn4" type="Position2D" parent="Map" index="4"]
+[node name="Spawn4" type="Position2D" parent="Map" index="20"]
 
-position = Vector2( 1250, 650 )
+editor/display_folded = true
+position = Vector2( 447.273, 240 )
+scale = Vector2( 0.363636, 0.363636 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ninja4" parent="Map/Spawn4" index="0" instance=ExtResource( 6 )]
 
-[node name="Flag Spawn" type="Position2D" parent="Map" index="5"]
+[node name="Flag Spawn" type="Position2D" parent="Map" index="21"]
 
-position = Vector2( 750, 425 )
+editor/display_folded = true
+position = Vector2( 240, 134.545 )
+scale = Vector2( 0.363636, 0.363636 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Flag" parent="Map/Flag Spawn" index="0" instance=ExtResource( 7 )]
 
 [node name="GUI" parent="." index="1" instance=ExtResource( 8 )]
 
-margin_right = 1426.0
-margin_bottom = 786.0
+margin_right = 1216.0
+margin_bottom = 736.0
 
 [node name="VBoxContainer" parent="GUI" index="0"]
 
-margin_right = 1470.0
-margin_bottom = 830.0
+margin_right = 1260.0
+margin_bottom = 780.0
 
 [node name="Text" parent="GUI/VBoxContainer" index="0"]
 
-margin_right = 1450.0
-margin_bottom = 734.0
+margin_right = 1240.0
+margin_bottom = 684.0
 
 [node name="VBoxContainer" parent="GUI/VBoxContainer/Text" index="0"]
 
-margin_left = 433.0
-margin_top = 234.0
-margin_right = 1017.0
-margin_bottom = 499.0
+margin_left = 328.0
+margin_top = 209.0
+margin_right = 912.0
+margin_bottom = 474.0
 
 [node name="Scores" parent="GUI/VBoxContainer" index="1"]
 
-margin_left = 425.0
-margin_top = 738.0
-margin_right = 1025.0
-margin_bottom = 810.0
+margin_left = 320.0
+margin_top = 688.0
+margin_right = 920.0
+margin_bottom = 760.0
 
 [node name="camera" type="Camera2D" parent="." index="2"]
 

@@ -77,12 +77,67 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=16]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=17]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=18]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=20]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=22]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=23]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=24]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=25]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=26]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=27]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=28]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -102,67 +157,12 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=17]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=27]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
 [sub_resource type="RectangleShape2D" id=32]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=33]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=18]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=26]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=19]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=25]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=24]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=23]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=22]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=21]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=20]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -405,6 +405,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="20" type="Sprite" parent="." index="20"]
 
+editor/display_folded = true
 position = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 centered = false
@@ -605,6 +606,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="32" type="Sprite" parent="." index="32"]
 
+editor/display_folded = true
 position = Vector2( 32, 48 )
 texture = ExtResource( 1 )
 centered = false
@@ -721,6 +723,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="42" type="Sprite" parent="." index="42"]
 
+editor/display_folded = true
 position = Vector2( 32, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -757,6 +760,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="44" type="Sprite" parent="." index="44"]
 
+editor/display_folded = true
 position = Vector2( 64, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -783,6 +787,7 @@ shape = SubResource( 10 )
 
 [node name="45" type="Sprite" parent="." index="45"]
 
+editor/display_folded = true
 position = Vector2( 80, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -809,6 +814,7 @@ shape = SubResource( 11 )
 
 [node name="46" type="Sprite" parent="." index="46"]
 
+editor/display_folded = true
 position = Vector2( 96, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -835,6 +841,7 @@ shape = SubResource( 12 )
 
 [node name="47" type="Sprite" parent="." index="47"]
 
+editor/display_folded = true
 position = Vector2( 112, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -861,6 +868,7 @@ shape = SubResource( 13 )
 
 [node name="48" type="Sprite" parent="." index="48"]
 
+editor/display_folded = true
 position = Vector2( 128, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -887,6 +895,7 @@ shape = SubResource( 14 )
 
 [node name="49" type="Sprite" parent="." index="49"]
 
+editor/display_folded = true
 position = Vector2( 144, 64 )
 texture = ExtResource( 1 )
 centered = false
@@ -975,7 +984,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="54/StaticBody2D" index="0"]
 
-shape = SubResource( 28 )
+shape = SubResource( 16 )
 
 [node name="55" type="Sprite" parent="." index="55"]
 
@@ -1019,6 +1028,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="59" type="Sprite" parent="." index="59"]
 
+editor/display_folded = true
 position = Vector2( 144, 80 )
 texture = ExtResource( 1 )
 centered = false
@@ -1041,7 +1051,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="59/StaticBody2D" index="0"]
 
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="60" type="Sprite" parent="." index="60"]
 
@@ -1085,6 +1095,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="64" type="Sprite" parent="." index="64"]
 
+editor/display_folded = true
 position = Vector2( 64, 96 )
 texture = ExtResource( 1 )
 centered = false
@@ -1107,7 +1118,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="64/StaticBody2D" index="0"]
 
-shape = SubResource( 29 )
+shape = SubResource( 18 )
 
 [node name="65" type="Sprite" parent="." index="65"]
 
@@ -1121,6 +1132,7 @@ _sections_unfolded = [ "Animation" ]
 
 [node name="66" type="Sprite" parent="." index="66"]
 
+editor/display_folded = true
 position = Vector2( 96, 96 )
 texture = ExtResource( 1 )
 centered = false
@@ -1143,7 +1155,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="66/StaticBody2D" index="0"]
 
-shape = SubResource( 30 )
+shape = SubResource( 19 )
 
 [node name="67" type="Sprite" parent="." index="67"]
 
@@ -1169,7 +1181,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="67/StaticBody2D" index="0"]
 
-shape = SubResource( 31 )
+shape = SubResource( 20 )
 
 [node name="68" type="Sprite" parent="." index="68"]
 
@@ -1205,7 +1217,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="69/StaticBody2D" index="0"]
 
-shape = SubResource( 17 )
+shape = SubResource( 21 )
 
 [node name="70" type="Sprite" parent="." index="70"]
 
@@ -1271,7 +1283,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="74/StaticBody2D" index="0"]
 
-shape = SubResource( 27 )
+shape = SubResource( 22 )
 
 [node name="75" type="Sprite" parent="." index="75"]
 
@@ -1307,7 +1319,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="76/StaticBody2D" index="0"]
 
-shape = SubResource( 32 )
+shape = SubResource( 23 )
 
 [node name="77" type="Sprite" parent="." index="77"]
 
@@ -1333,7 +1345,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="77/StaticBody2D" index="0"]
 
-shape = SubResource( 33 )
+shape = SubResource( 24 )
 
 [node name="78" type="Sprite" parent="." index="78"]
 
@@ -1369,7 +1381,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="79/StaticBody2D" index="0"]
 
-shape = SubResource( 18 )
+shape = SubResource( 25 )
 
 [node name="80" type="Sprite" parent="." index="80"]
 
@@ -1501,7 +1513,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="89/StaticBody2D" index="0"]
 
-shape = SubResource( 19 )
+shape = SubResource( 27 )
 
 [node name="90" type="Sprite" parent="." index="90"]
 
@@ -1567,7 +1579,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="94/StaticBody2D" index="0"]
 
-shape = SubResource( 25 )
+shape = SubResource( 28 )
 
 [node name="95" type="Sprite" parent="." index="95"]
 
@@ -1593,7 +1605,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="95/StaticBody2D" index="0"]
 
-shape = SubResource( 24 )
+shape = SubResource( 29 )
 
 [node name="96" type="Sprite" parent="." index="96"]
 
@@ -1619,7 +1631,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="96/StaticBody2D" index="0"]
 
-shape = SubResource( 23 )
+shape = SubResource( 30 )
 
 [node name="97" type="Sprite" parent="." index="97"]
 
@@ -1645,7 +1657,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="97/StaticBody2D" index="0"]
 
-shape = SubResource( 22 )
+shape = SubResource( 31 )
 
 [node name="98" type="Sprite" parent="." index="98"]
 
@@ -1671,7 +1683,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="98/StaticBody2D" index="0"]
 
-shape = SubResource( 21 )
+shape = SubResource( 32 )
 
 [node name="99" type="Sprite" parent="." index="99"]
 
@@ -1697,6 +1709,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="99/StaticBody2D" index="0"]
 
-shape = SubResource( 20 )
+shape = SubResource( 33 )
 
 
