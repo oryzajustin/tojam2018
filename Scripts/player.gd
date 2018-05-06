@@ -46,6 +46,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released(parent.getActionThrowShurikenKey()):
 		animation(direction, speed)
+	if is_flag_holder:
+		parent.updateScore()
 	if is_stunned and stun_timer.get_time_left() == 0:
 		print("Player is stunned... but now free!!!")
 		is_stunned = false

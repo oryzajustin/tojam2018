@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Ninja1.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -120,6 +120,82 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=7]
 
+resource_name = "player_throw_down"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "player_throw_left"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 27 ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "player_throw_right"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 2,
+"values": [ 7 ]
+}
+
+[sub_resource type="Animation" id=10]
+
+resource_name = "player_throw_up"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 37 ]
+}
+
+[sub_resource type="Animation" id=11]
+
 length = 0.3
 loop = true
 step = 0.1
@@ -136,7 +212,7 @@ tracks/0/keys = {
 "values": [ 11, 16 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=12]
 
 length = 0.3
 loop = true
@@ -154,7 +230,7 @@ tracks/0/keys = {
 "values": [ 21, 26 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=13]
 
 length = 0.3
 loop = true
@@ -172,7 +248,7 @@ tracks/0/keys = {
 "values": [ 1, 6 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=14]
 
 length = 0.3
 loop = true
@@ -218,10 +294,14 @@ anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
 anims/player_death = SubResource( 5 )
 anims/player_stun = SubResource( 6 )
-anims/walk_down = SubResource( 7 )
-anims/walk_left = SubResource( 8 )
-anims/walk_right = SubResource( 9 )
-anims/walk_up = SubResource( 10 )
+anims/player_throw_down = SubResource( 7 )
+anims/player_throw_left = SubResource( 8 )
+anims/player_throw_right = SubResource( 9 )
+anims/player_throw_up = SubResource( 10 )
+anims/walk_down = SubResource( 11 )
+anims/walk_left = SubResource( 12 )
+anims/walk_right = SubResource( 13 )
+anims/walk_up = SubResource( 14 )
 blend_times = [  ]
 
 

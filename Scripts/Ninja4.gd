@@ -8,6 +8,9 @@ onready var ACTION_RIGHT = "ninja4_right"
 onready var ACTION_THROW_SHURIKEN = "ninja4_throw_shuriken"
 onready var ACTION_PLACE_TRAP = "ninja4_place_trap"
 
+func updateScore():
+	global.player4_score += 10
+	
 func getActionUpKey():
 	return ACTION_UP
 
