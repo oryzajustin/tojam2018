@@ -1,20 +1,13 @@
 extends Node2D
 
-onready var camera = get_node("Camera2D")
-var magnitude = 60
-var duration = 1.5
+var magnitude = 8
 var time = 0
+var duration = 0.2
 
-func _ready():
-	var bg = get_node("bg").play()
-	shake()
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+onready var camera = get_node("camera")
 
 func shake():
+	print("shake")
 	while time < duration:
 		time += get_process_delta_time()
 		

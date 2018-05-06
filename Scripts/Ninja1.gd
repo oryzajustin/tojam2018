@@ -7,6 +7,7 @@ onready var ACTION_LEFT = "ninja1_left"
 onready var ACTION_RIGHT = "ninja1_right"
 onready var ACTION_THROW_SHURIKEN = "ninja1_throw_shuriken"
 onready var ACTION_PLACE_TRAP = "ninja1_place_trap"
+signal player1_death
 
 func updateScore():
 	global.player1_score += 10
@@ -31,3 +32,8 @@ func getActionThrowShurikenKey():
 
 func getActionPlaceTrapKey():
 	return ACTION_PLACE_TRAP
+
+
+func _on_Player_died():
+	print("wow")
+	emit_signal("player1_death")
