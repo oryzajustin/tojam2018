@@ -5,19 +5,20 @@ const UP = Vector2(0, -1)
 const DOWN = Vector2(0, 1)
 const LEFT = Vector2(-1, 0)
 const RIGHT = Vector2(1, 0)
-const MAX_SPEED = 300
-const MAX_TRAP = 2
-const MAX_SHURIKEN = 3
 
 # Variables
 var speed = 0
 var velocity = Vector2(0, 0)
 var direction = Vector2(0, 0)
 var is_dead = false
+var is_stunned = false
 
-# Player inventory on spawn
-var curr_num_trap = 1
-var curr_num_shuriken = 1
+# Player stats/gear
+export var MAX_SPEED = 300
+export var MAX_TRAP = 1
+export var MAX_SHURIKEN = 1
+export var curr_num_trap = 1
+export var curr_num_shuriken = 1
 
 onready var parent = get_owner()
 onready var player = get_node("Sprite")
@@ -29,6 +30,7 @@ onready var trap = preload("res://Scenes/trap.tscn")
 onready var trap_container = get_node("Trap Container")
 onready var trap_timer = get_node("Trap Timer")
 onready var death_timer = get_node("Death Timer")
+onready var stun_timer = get_node("Stun Timer")
 
 func _ready():
 	# Play spawning animation
@@ -38,19 +40,22 @@ func _ready():
 	set_physics_process(true)
 
 func _process(delta):
-	if !is_dead:
+	if is_stunned and stun_timer.get_time_left() == 0:
+		print("Player is stunned... but now free!!!")
+		is_stunned = false
+	if !is_dead and !is_stunned:
 		if Input.is_action_pressed(parent.getActionThrowShurikenKey()):
 			if shuriken_timer.get_time_left() == 0:
 				throw_shuriken()
 		if Input.is_action_pressed(parent.getActionPlaceTrapKey()):
 			if trap_timer.get_time_left() == 0:
 				place_trap()
-	else:
+	if is_dead:
 		if death_timer.get_time_left() == 0:
 			respawn()
 
 func _physics_process(delta):
-	if !is_dead:
+	if !is_dead and !is_stunned:
 		if Input.is_action_pressed(parent.getActionUpKey()):
 			speed = MAX_SPEED
 			direction = UP
@@ -114,6 +119,8 @@ func pickup_shuriken(pickup):
 		pickup.queue_free()
 		
 func place_trap():
+	# Check if trap placement is valid location first
+	# Play a indicator that player has placed a trap
 	if curr_num_trap > 0:
 		curr_num_trap -= 1
 		trap_timer.start()
@@ -134,6 +141,12 @@ func defuse_trap(defused_trap):
 		print("Defused trap!!")
 		curr_num_trap += 1
 		defused_trap.queue_free()
+
+func trigger_trap():
+	print("Player has triggered trap!!!")
+	stun_timer.start()
+	is_stunned = true
+	# anim.play("player_stunned")
 
 func death():
 	print("This guy has died!!! Do respawn...")

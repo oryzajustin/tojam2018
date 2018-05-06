@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",
@@ -12,6 +12,11 @@ collision_mask = 31
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+MAX_SPEED = 300
+MAX_TRAP = 1
+MAX_SHURIKEN = 1
+curr_num_trap = 1
+curr_num_shuriken = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
@@ -25,7 +30,7 @@ scale = Vector2( 0.986176, 1 )
 
 [node name="Down" type="Position2D" parent="." index="2"]
 
-position = Vector2( 0, 30 )
+position = Vector2( 0, 40 )
 scale = Vector2( 0.986176, 1 )
 
 [node name="Left" type="Position2D" parent="." index="3"]
@@ -43,7 +48,7 @@ scale = Vector2( 0.986176, 1 )
 [node name="Shuriken Timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 0.25
+wait_time = 0.5
 one_shot = true
 autostart = false
 
@@ -60,6 +65,13 @@ autostart = false
 
 process_mode = 1
 wait_time = 3.6
+one_shot = true
+autostart = false
+
+[node name="Stun Timer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 5.0
 one_shot = true
 autostart = false
 
