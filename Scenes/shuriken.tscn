@@ -1,9 +1,66 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Shuriken.gd" type="Script" id=1]
-[ext_resource path="res://Assets/shuriken_placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fx.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Audio/nutfall.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/crash.wav" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "flying"
+length = 0.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 16, 17, 18 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "shimmer"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 10, 15 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "shur_idle"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 10 ]
+}
 
 [node name="Shuriken" type="KinematicBody2D" groups=[
 "projectiles",
@@ -20,8 +77,12 @@ speed = 500
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( -9.53689e-08, -0.0262132 )
-scale = Vector2( 0.05, 0.0524246 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+vframes = 10
+hframes = 10
+frame = 10
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
@@ -62,6 +123,18 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/flying = SubResource( 1 )
+anims/shimmer = SubResource( 2 )
+anims/shur_idle = SubResource( 3 )
+blend_times = [  ]
 
 [connection signal="body_entered" from="Pickup Radius" to="." method="_on_Pickup_Radius_body_entered"]
 

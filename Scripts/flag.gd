@@ -2,8 +2,10 @@ extends Node2D
 
 var current_holder = null
 onready var flag_spawn_position = self.get_global_position()
+onready var anim = get_node("AnimationPlayer")
 
 func _process(delta):
+	anim.play("flag_wiggle")
 	if current_holder != null:
 		self.global_position = current_holder.get_global_position()
 	else:

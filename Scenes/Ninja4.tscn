@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Ninja4.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/ninja_sprites_purple.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ninja-sprites-purple.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -175,7 +175,7 @@ tracks/0/keys = {
 "values": [ 31, 36 ]
 }
 
-[node name="Ninja4" type="Node2D"]
+[node name="Ninja4" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
