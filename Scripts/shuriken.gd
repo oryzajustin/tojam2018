@@ -15,6 +15,7 @@ func _physics_process(delta):
 			# Projectile continues flying
 			velocity = Vector2(speed, 0).rotated(rotation)
 		else:
+			var stuck_sound = get_node("stuck").play()
 			velocity = Vector2(0, 0) # Stop shuriken movement
 			get_node("CollisionPolygon2D").disabled = true # Allow players to move through stopped shuriken (if they can't pick up)
 
