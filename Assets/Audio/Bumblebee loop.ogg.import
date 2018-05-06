@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bumblebee loop.ogg-d1143e5d60da766834dc10010fe6e955.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Bumblebee loop.ogg"
+source_md5="ac7271a5359f32937451537f5a4cb528"
+
+dest_files=[ "res://.import/Bumblebee loop.ogg-d1143e5d60da766834dc10010fe6e955.oggstr" ]
+dest_md5="4cb73b7bb31bd37967d9e828c88a9caa"
+
+[params]
+
+loop=true
+loop_offset=0

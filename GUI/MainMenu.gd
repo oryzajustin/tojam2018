@@ -1,5 +1,10 @@
 extends MarginContainer
 
+onready var bg_song = get_node("gui_background")
+
+func _ready():
+	bg_song.play()
+
 func _process(delta):
 	if get_tree().get_current_scene().get_name() != "Main Menu":
 		self.queue_free()
