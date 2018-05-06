@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Trap.gd" type="Script" id=1]
 [ext_resource path="res://Assets/trap.png" type="Texture" id=2]
 
-[node name="Trap" type="Node2D" index="0"]
+[node name="Trap" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]

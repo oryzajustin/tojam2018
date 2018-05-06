@@ -21,9 +21,9 @@ var spawn3 = null
 var spawn4 = null
 
 # Scenes
-var two_player_scene_path = "res://Scenes/FourPlayerMap.tscn"
-var three_player_scene_path = "res://Scenes/FourPlayerMap.tscn"
-var four_player_scene_path = "res://Scenes/FourPlayerMap.tscn"
+var two_player_scene_path = "res://Scenes/main.tscn"
+var three_player_scene_path = "res://Scenes/main.tscn"
+var four_player_scene_path = "res://Scenes/main.tscn"
 
 func _ready():
 	current_scene_name = "Main Menu"
