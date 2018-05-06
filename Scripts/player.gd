@@ -25,6 +25,7 @@ export var curr_num_shuriken = 1
 onready var parent = get_owner()
 onready var player = get_node("Sprite")
 onready var anim = get_node("AnimationPlayer")
+onready var score_interval = get_node("Score Interval")
 onready var shuriken = preload("res://Scenes/shuriken.tscn")
 onready var shuriken_container = get_node("Shuriken Container")
 onready var shuriken_timer = get_node("Shuriken Timer")
@@ -46,8 +47,9 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_released(parent.getActionThrowShurikenKey()):
 		animation(direction, speed)
-	if is_flag_holder:
+	if is_flag_holder and score_interval.get_time_left() == 0:
 		parent.updateScore()
+		score_interval.start()
 	if is_stunned and stun_timer.get_time_left() == 0:
 		print("Player is stunned... but now free!!!")
 		is_stunned = false
@@ -166,14 +168,21 @@ func trigger_trap():
 	is_stunned = true
 	anim.play("player_stun")
 
+func flag_stolen():
+	is_flag_holder = false
+	flag = null
+	score_interval.stop()
+	
 func pickup_flag(picked_up_flag):
 	var flag_sound = get_node("flag").play()
 	is_flag_holder = true
 	flag = picked_up_flag
+	score_interval.start()
 
 func death():
 	print("This guy has died!!! Do respawn...")
 	if is_flag_holder:
+		score_interval.stop()
 		flag.dropped()
 		is_flag_holder = false
 		#flag.global_position = self.get_global_position()
@@ -190,4 +199,4 @@ func respawn():
 	curr_num_shuriken = 1
 	curr_num_trap = 1
 	# Need to get node positions from global variables...
-	self.global_position = Vector2(320, 320)
+	self.global_position = parent.getRespawnLocation()

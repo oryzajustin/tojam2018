@@ -16,3 +16,8 @@ func _on_Pickup_Area_body_entered(body):
 	if body.is_in_group("players"):
 		body.pickup_flag(self)
 		current_holder = body
+
+
+func _on_Pickup_Area_body_exited(body):
+	if body.is_in_group("players"):
+		body.flag_stolen()

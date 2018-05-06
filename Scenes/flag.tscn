@@ -32,4 +32,6 @@ polygon = PoolVector2Array( 40, 60, 40, 100, 20, 100, 20, 60 )
 
 [connection signal="body_entered" from="Pickup Area" to="." method="_on_Pickup_Area_body_entered"]
 
+[connection signal="body_exited" from="Pickup Area" to="." method="_on_Pickup_Area_body_exited"]
+
 

@@ -11,6 +11,9 @@ onready var ACTION_PLACE_TRAP = "ninja3_place_trap"
 func updateScore():
 	global.player3_score += 10
 	
+func getRespawnLocation():
+	return global.spawn3
+	
 func getActionUpKey():
 	return ACTION_UP
 
