@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_SCORE = 20
+const MAX_SCORE = 500
 var gameover = false
 
 var player1_score = 0
