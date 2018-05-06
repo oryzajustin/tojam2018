@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/flag.gd" type="Script" id=1]
 [ext_resource path="res://Assets/required_goatonapole.png" type="Texture" id=2]
 
-[node name="Flag" type="Node2D" index="0"]
+[node name="Flag" type="Node2D"]
 
 script = ExtResource( 1 )
 

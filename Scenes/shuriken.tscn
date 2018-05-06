@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/shuriken.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Shuriken.gd" type="Script" id=1]
 [ext_resource path="res://Assets/shuriken_placeholder.png" type="Texture" id=2]
 
 [node name="Shuriken" type="KinematicBody2D" groups=[
@@ -13,18 +13,18 @@ collision_mask = 3
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-speed = 380
+speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 9.53674e-07, -0.0131059 )
-scale = Vector2( 0.025, 0.0262123 )
+position = Vector2( 1.43051e-06, -0.0262132 )
+scale = Vector2( 0.05, 0.0524246 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( 10, 0, 0, 10, -10, 0, 0, -10 )
+polygon = PoolVector2Array( 20, 0, 0, 20, -20, 0, 0, -20 )
 
 [node name="Pickup Radius" type="Area2D" parent="." index="2"]
 
@@ -39,7 +39,7 @@ audio_bus_name = "Master"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pickup Radius" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, -20, -20, 0, 0, 20, 20, 0, 0, -20 )
+polygon = PoolVector2Array( 0, -30, -20, -20, -30, 0, -20, 20, 0, 30, 20, 20, 30, 0, 20, -20 )
 
 [connection signal="body_entered" from="Pickup Radius" to="." method="_on_Pickup_Radius_body_entered"]
 
