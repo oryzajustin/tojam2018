@@ -38,6 +38,9 @@ onready var stun_timer = get_node("Stun Timer")
 onready var zap_sound = get_node("zap")
 onready var throw_sound = get_node("throw")
 
+onready var explosion_container = get_node("explosion_container")
+onready var explosion = preload("res://Scenes/explosion.tscn")
+
 signal died
 
 func _ready():
@@ -175,6 +178,9 @@ func defuse_trap(defused_trap):
 
 func trigger_trap():
 	print("Player has triggered trap!!!")
+	var e = explosion.instance()
+	explosion_container.add_child(e)
+	e.position = self.get_global_position()
 	zap_sound.play()
 	stun_timer.start()
 	is_stunned = true

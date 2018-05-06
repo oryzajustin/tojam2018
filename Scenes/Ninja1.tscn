@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Ninja1.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/ninja_sprites_red.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ninja-sprites-red.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 
@@ -266,13 +266,11 @@ tracks/0/keys = {
 "values": [ 31, 36 ]
 }
 
-[node name="Ninja1" type="Node2D"]
+[node name="Ninja1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
-
-FLAG_CARRY_SPEED = 275
 
 [node name="Sprite" type="Sprite" parent="Player" index="5"]
 

@@ -1,7 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/flag.gd" type="Script" id=1]
-[ext_resource path="res://Assets/required_goatonapole.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fx.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "flag_idle"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "flag_wiggle"
+length = 0.3
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
 
 [node name="Flag" type="Node2D"]
 
@@ -10,9 +48,12 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( -4.07829, -30 )
-scale = Vector2( 0.0944004, 0.0963391 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+vframes = 10
+hframes = 10
+frame = 1
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Pickup Area" type="Area2D" parent="." index="1"]
 
@@ -31,6 +72,17 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -29.0783, -80 )
 build_mode = 0
 polygon = PoolVector2Array( 40, 60, 40, 100, 20, 100, 20, 60 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/flag_idle = SubResource( 1 )
+anims/flag_wiggle = SubResource( 2 )
+blend_times = [  ]
 
 [connection signal="body_entered" from="Pickup Area" to="." method="_on_Pickup_Area_body_entered"]
 
