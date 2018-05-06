@@ -7,10 +7,10 @@ path="res://.import/ninja_sprites_red.png-bb1aae51d74da76f7f8f21237206e286.stex"
 [deps]
 
 source_file="res://Assets/ninja_sprites_red.png"
-source_md5="8496653db6d4be3926da77766b96898a"
+source_md5="db726d26a9c99ebcc9f593807988d88f"
 
 dest_files=[ "res://.import/ninja_sprites_red.png-bb1aae51d74da76f7f8f21237206e286.stex" ]
-dest_md5="26c2efd484585686bc2b2edf2bef438c"
+dest_md5="b42d4433bc3412b905a6b83c572bcb5f"
 
 [params]
 

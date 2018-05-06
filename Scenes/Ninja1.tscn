@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Ninja1.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -97,6 +97,25 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 40, 41, 42, 44, 45, 49 ]
+}
+
+[sub_resource type="Animation" id=11]
+
+resource_name = "stun"
+length = 0.4
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 70, 71, 71, 71, 70 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -198,6 +217,7 @@ anims/idle_left = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
 anims/player_death = SubResource( 5 )
+anims/stun = SubResource( 11 )
 anims/walk_down = SubResource( 7 )
 anims/walk_left = SubResource( 8 )
 anims/walk_right = SubResource( 9 )
