@@ -12,6 +12,8 @@ var velocity = Vector2(0, 0)
 var direction = Vector2(0, 0)
 var is_dead = false
 var is_stunned = false
+var is_flag_holder = false
+var flag = null
 
 # Player stats/gear
 export var MAX_SPEED = 300
@@ -149,8 +151,15 @@ func trigger_trap():
 	is_stunned = true
 	anim.play("player_stun")
 
+func pickup_flag(picked_up_flag):
+	is_flag_holder = true
+	flag = picked_up_flag
+
 func death():
 	print("This guy has died!!! Do respawn...")
+	if is_flag_holder:
+		flag.dropped()
+		is_flag_holder = false
 	death_timer.start()
 	is_dead = true
 	get_node("CollisionPolygon2D").disabled = true
