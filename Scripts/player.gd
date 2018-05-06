@@ -44,6 +44,8 @@ func _ready():
 	set_physics_process(true)
 
 func _process(delta):
+	if Input.is_action_just_released(parent.getActionThrowShurikenKey()):
+		animation(direction, speed)
 	if is_stunned and stun_timer.get_time_left() == 0:
 		print("Player is stunned... but now free!!!")
 		is_stunned = false
@@ -109,13 +111,19 @@ func throw_shuriken():
 		var s = shuriken.instance()
 		shuriken_container.add_child(s)
 		if direction == UP:
+			anim.play("player_throw_up")
 			s.start_at(3 * PI/2, get_node("Up").global_position)
 		elif direction == DOWN:
+			anim.play("player_throw_down")
 			s.start_at(PI/2, get_node("Down").global_position)
 		elif direction == LEFT:
+			anim.play("player_throw_left")
 			s.start_at(PI, get_node("Left").global_position)
 		elif direction == RIGHT:
+			anim.play("player_throw_right")
 			s.start_at(2 * PI, get_node("Right").global_position)
+	
+		
 
 func pickup_shuriken(pickup):
 	print("Going to try to pick up shuriken")
@@ -174,5 +182,8 @@ func respawn():
 	anim.play("idle_down")
 	is_dead = false
 	get_node("CollisionPolygon2D").disabled = false
+	# Reset inventory
+	curr_num_shuriken = 1
+	curr_num_trap = 1
 	# Need to get node positions from global variables...
 	self.global_position = Vector2(320, 320)

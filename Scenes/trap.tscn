@@ -65,7 +65,7 @@ polygon = PoolVector2Array( -80, -30, -30, -80, 30, -80, 80, -30, 80, 30, 30, 80
 [node name="Defuse Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
-wait_time = 2.5
+wait_time = 1.0
 one_shot = true
 autostart = false
 
