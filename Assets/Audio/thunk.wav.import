@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/thunk.wav-79f421b2d12a8eea6ed8b9d414bfe024.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/thunk.wav"
+source_md5="fff3ce0e6a07b92f34b8e52d6ad629fb"
+
+dest_files=[ "res://.import/thunk.wav-79f421b2d12a8eea6ed8b9d414bfe024.sample" ]
+dest_md5="484c08ee8db39b76fca6d248ab0bef87"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

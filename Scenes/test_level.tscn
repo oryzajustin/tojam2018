@@ -7,24 +7,31 @@
 [ext_resource path="res://Scenes/Ninja3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Ninja4.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Map" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( -8.12073, 1 )
 
-[node name="Ninja1" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Sprite" parent="Map" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 88.0123, 81.2221 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="Ninja1" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 78, 78 )
 
-[node name="Ninja2" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Ninja2" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 524, 78 )
 
-[node name="Ninja3" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Ninja3" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 77, 525 )
 
-[node name="Ninja4" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Ninja4" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 526, 524 )
+
+

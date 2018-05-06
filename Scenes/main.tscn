@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Ninja4.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="Map" parent="." index="0" instance=ExtResource( 1 )]
 

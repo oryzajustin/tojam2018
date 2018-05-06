@@ -11,6 +11,7 @@ func _physics_process(delta):
 	if collision_info: # True after collision
 		if collision_info.collider.is_in_group("players"):
 			# Could do a screen shake here
+			var onhit = get_node("onhit").play()
 			collision_info.collider.death()
 			# Projectile continues flying
 			velocity = Vector2(speed, 0).rotated(rotation)
