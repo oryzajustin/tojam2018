@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -20,8 +20,10 @@ curr_num_shuriken = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 
+position = Vector2( 3.57628e-06, 0 )
+scale = Vector2( 1.5625, 1 )
 build_mode = 0
-polygon = PoolVector2Array( -10, -10, 10, -10, 10, 20, -10, 20, -10, -10 )
+polygon = PoolVector2Array( 8, -10, 8, 20, -8, 20, -8, -10 )
 
 [node name="Up" type="Position2D" parent="." index="1"]
 

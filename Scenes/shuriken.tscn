@@ -17,14 +17,14 @@ speed = 400
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1.43051e-06, -0.0262132 )
+position = Vector2( -9.53689e-08, -0.0262132 )
 scale = Vector2( 0.05, 0.0524246 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
-polygon = PoolVector2Array( 20, 0, 0, 20, -20, 0, 0, -20 )
+polygon = PoolVector2Array( 10, 0, 0, 10, -10, 0, 0, -10 )
 
 [node name="Pickup Radius" type="Area2D" parent="." index="2"]
 
