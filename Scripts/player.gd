@@ -155,11 +155,10 @@ func place_trap():
 			t.set_trap(get_node("Right").global_position)
 
 func defuse_trap(defused_trap):
-	print("Going to try to defuse trap")
+	print("Defused trap!!")
+	defused_trap.queue_free()
 	if curr_num_trap < MAX_TRAP:
-		print("Defused trap!!")
 		curr_num_trap += 1
-		defused_trap.queue_free()
 
 func trigger_trap():
 	print("Player has triggered trap!!!")
