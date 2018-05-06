@@ -8,7 +8,7 @@
 
 input_pickable = false
 collision_layer = 2
-collision_mask = 29
+collision_mask = 31
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
@@ -53,6 +53,13 @@ autostart = false
 
 process_mode = 1
 wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Death Timer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 3.6
 one_shot = true
 autostart = false
 

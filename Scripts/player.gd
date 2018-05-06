@@ -13,6 +13,7 @@ const MAX_SHURIKEN = 3
 var speed = 0
 var velocity = Vector2(0, 0)
 var direction = Vector2(0, 0)
+var is_dead = false
 
 # Player inventory on spawn
 var curr_num_trap = 1
@@ -27,39 +28,47 @@ onready var shuriken_timer = get_node("Shuriken Timer")
 onready var trap = preload("res://Scenes/trap.tscn")
 onready var trap_container = get_node("Trap Container")
 onready var trap_timer = get_node("Trap Timer")
+onready var death_timer = get_node("Death Timer")
 
 func _ready():
+	# Play spawning animation
+	# anim.play("player_spawn")
 	# Hacky fix for the way the ninjas spawn...
 	direction = LEFT
 	set_physics_process(true)
 
 func _process(delta):
-	if Input.is_action_pressed(parent.getActionThrowShurikenKey()):
-		if shuriken_timer.get_time_left() == 0:
-			throw_shuriken()
-	if Input.is_action_pressed(parent.getActionPlaceTrapKey()):
-		if trap_timer.get_time_left() == 0:
-			place_trap()
+	if !is_dead:
+		if Input.is_action_pressed(parent.getActionThrowShurikenKey()):
+			if shuriken_timer.get_time_left() == 0:
+				throw_shuriken()
+		if Input.is_action_pressed(parent.getActionPlaceTrapKey()):
+			if trap_timer.get_time_left() == 0:
+				place_trap()
+	else:
+		if death_timer.get_time_left() == 0:
+			respawn()
 
 func _physics_process(delta):
-	if Input.is_action_pressed(parent.getActionUpKey()):
-		speed = MAX_SPEED
-		direction = UP
-	elif Input.is_action_pressed(parent.getActionDownKey()):
-		speed = MAX_SPEED
-		direction = DOWN
-	elif Input.is_action_pressed(parent.getActionLeftKey()):
-		speed = MAX_SPEED
-		direction = LEFT
-	elif Input.is_action_pressed(parent.getActionRightKey()):
-		speed = MAX_SPEED
-		direction = RIGHT
-	else:
-		speed = 0
-	velocity = speed * direction * delta
-	if Input.is_action_just_pressed(parent.getActionRightKey()) or Input.is_action_just_released(parent.getActionRightKey()) or Input.is_action_just_pressed(parent.getActionLeftKey()) or Input.is_action_just_released(parent.getActionLeftKey()) or Input.is_action_just_pressed(parent.getActionUpKey()) or Input.is_action_just_released(parent.getActionUpKey()) or Input.is_action_just_pressed(parent.getActionDownKey()) or Input.is_action_just_released(parent.getActionDownKey()):
-		animation(direction, speed)
-	move_and_collide(velocity)
+	if !is_dead:
+		if Input.is_action_pressed(parent.getActionUpKey()):
+			speed = MAX_SPEED
+			direction = UP
+		elif Input.is_action_pressed(parent.getActionDownKey()):
+			speed = MAX_SPEED
+			direction = DOWN
+		elif Input.is_action_pressed(parent.getActionLeftKey()):
+			speed = MAX_SPEED
+			direction = LEFT
+		elif Input.is_action_pressed(parent.getActionRightKey()):
+			speed = MAX_SPEED
+			direction = RIGHT
+		else:
+			speed = 0
+		velocity = speed * direction * delta
+		if Input.is_action_just_pressed(parent.getActionRightKey()) or Input.is_action_just_released(parent.getActionRightKey()) or Input.is_action_just_pressed(parent.getActionLeftKey()) or Input.is_action_just_released(parent.getActionLeftKey()) or Input.is_action_just_pressed(parent.getActionUpKey()) or Input.is_action_just_released(parent.getActionUpKey()) or Input.is_action_just_pressed(parent.getActionDownKey()) or Input.is_action_just_released(parent.getActionDownKey()):
+			animation(direction, speed)
+		move_and_collide(velocity)
 	
 func animation(dir, speed):
 	if dir == LEFT and speed != 0:
@@ -128,6 +137,14 @@ func defuse_trap(defused_trap):
 
 func death():
 	print("This guy has died!!! Do respawn...")
+	death_timer.start()
+	is_dead = true
 	get_node("CollisionPolygon2D").disabled = true
-	# Teleport to jail instead of deleting...
 	anim.play("player_death")
+
+func respawn():
+	anim.play("idle_down")
+	is_dead = false
+	get_node("CollisionPolygon2D").disabled = false
+	# Need to get node positions from global variables...
+	self.global_position = Vector2(320, 320)
