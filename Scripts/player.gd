@@ -43,6 +43,7 @@ func _process(delta):
 	if is_stunned and stun_timer.get_time_left() == 0:
 		print("Player is stunned... but now free!!!")
 		is_stunned = false
+		anim.play("idle_down")
 	if !is_dead and !is_stunned:
 		if Input.is_action_pressed(parent.getActionThrowShurikenKey()):
 			if shuriken_timer.get_time_left() == 0:
@@ -146,7 +147,7 @@ func trigger_trap():
 	print("Player has triggered trap!!!")
 	stun_timer.start()
 	is_stunned = true
-	# anim.play("player_stunned")
+	anim.play("player_stun")
 
 func death():
 	print("This guy has died!!! Do respawn...")

@@ -99,9 +99,9 @@ tracks/0/keys = {
 "values": [ 40, 41, 42, 44, 45, 49 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=6]
 
-resource_name = "stun"
+resource_name = "player_stun"
 length = 0.4
 loop = true
 step = 0.05
@@ -217,7 +217,7 @@ anims/idle_left = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
 anims/idle_up = SubResource( 4 )
 anims/player_death = SubResource( 5 )
-anims/stun = SubResource( 11 )
+anims/player_stun = SubResource( 6 )
 anims/walk_down = SubResource( 7 )
 anims/walk_left = SubResource( 8 )
 anims/walk_right = SubResource( 9 )
