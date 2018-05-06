@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Mr. Blue Sky NES.wav-7eb2596dd85237dfe5876f9f412bfc8d.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Mr. Blue Sky NES.wav"
+source_md5="6768aa2b52dc7493b5e39c0c7af6f800"
+
+dest_files=[ "res://.import/Mr. Blue Sky NES.wav-7eb2596dd85237dfe5876f9f412bfc8d.sample" ]
+dest_md5="dedba0efab81eec8f4a524a21318e7f9"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
