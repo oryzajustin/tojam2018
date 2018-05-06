@@ -266,7 +266,7 @@ tracks/0/keys = {
 "values": [ 31, 36 ]
 }
 
-[node name="Ninja1" type="Node2D" index="0"]
+[node name="Ninja1" type="Node2D"]
 
 script = ExtResource( 1 )
 

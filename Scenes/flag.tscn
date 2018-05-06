@@ -25,7 +25,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 
 resource_name = "flag_wiggle"
-length = 0.3
+length = 10.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -35,10 +35,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 2 ]
+"times": PoolRealArray( 0.2, 0.3, 3.1, 3.2, 6.1, 6.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 1, 0, 2, 2 ]
 }
 
 [node name="Flag" type="Node2D"]
@@ -52,7 +52,7 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 10
-frame = 1
+frame = 2
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Pickup Area" type="Area2D" parent="." index="1"]

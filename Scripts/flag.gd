@@ -4,8 +4,10 @@ var current_holder = null
 onready var flag_spawn_position = self.get_global_position()
 onready var anim = get_node("AnimationPlayer")
 
-func _process(delta):
+func _ready():
 	anim.play("flag_wiggle")
+
+func _process(delta):
 	if current_holder != null:
 		self.global_position = current_holder.get_global_position()
 	else:
