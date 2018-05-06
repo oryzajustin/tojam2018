@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav-ff479c915ab95bbe5e2ec488b76ed0a4.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav"
+source_md5="3ab3a7ec4235c4ebe82ed57901bfed3a"
+
+dest_files=[ "res://.import/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav-ff479c915ab95bbe5e2ec488b76ed0a4.sample" ]
+dest_md5="dfa08de0a40660c937ada80b1218a645"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

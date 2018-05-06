@@ -33,6 +33,8 @@ onready var trap_container = get_node("Trap Container")
 onready var trap_timer = get_node("Trap Timer")
 onready var death_timer = get_node("Death Timer")
 onready var stun_timer = get_node("Stun Timer")
+onready var zap_sound = get_node("zap")
+onready var throw_sound = get_node("throw")
 
 func _ready():
 	# Play spawning animation
@@ -102,6 +104,7 @@ func animation(dir, speed):
 func throw_shuriken():
 	if curr_num_shuriken > 0:
 		curr_num_shuriken -= 1
+		throw_sound.play()
 		shuriken_timer.start()
 		var s = shuriken.instance()
 		shuriken_container.add_child(s)
@@ -118,6 +121,7 @@ func pickup_shuriken(pickup):
 	print("Going to try to pick up shuriken")
 	if curr_num_shuriken < MAX_SHURIKEN:
 		print("Picked up shuriken!!")
+		var pickup_sound = get_node("pickup").play()
 		curr_num_shuriken += 1
 		pickup.queue_free()
 		
@@ -147,6 +151,7 @@ func defuse_trap(defused_trap):
 
 func trigger_trap():
 	print("Player has triggered trap!!!")
+	zap_sound.play()
 	stun_timer.start()
 	is_stunned = true
 	anim.play("player_stun")
