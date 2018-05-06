@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Audio/nutfall.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/crash.wav" type="AudioStream" id=4]
 
-[node name="Shuriken" type="KinematicBody2D" index="0" groups=[
+[node name="Shuriken" type="KinematicBody2D" groups=[
 "projectiles",
 ]]
 
