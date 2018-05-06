@@ -32,9 +32,9 @@ onready var death_timer = get_node("Death Timer")
 
 func _ready():
 	# Play spawning animation
-	# anim.play("player_spawn")
+	anim.play("spawn")
 	# Hacky fix for the way the ninjas spawn...
-	direction = LEFT
+	direction = DOWN
 	set_physics_process(true)
 
 func _process(delta):
