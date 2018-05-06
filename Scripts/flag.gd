@@ -1,15 +1,13 @@
 extends Node2D
 
 var current_holder = null
-
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+onready var flag_spawn_position = self.get_global_position()
 
 func _process(delta):
 	if current_holder != null:
 		self.global_position = current_holder.get_global_position()
+	else:
+		self.global_position = flag_spawn_position
 
 func dropped():
 	current_holder = null

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sheepHit.wav-b354aa3c87b91d63bb35e1035572d85a.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/sheepHit.wav"
+source_md5="38c80a3fb732fdf83646e280d38a37cf"
+
+dest_files=[ "res://.import/sheepHit.wav-b354aa3c87b91d63bb35e1035572d85a.sample" ]
+dest_md5="ca6dc94eac0800ea94da3ac8ead06f51"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
