@@ -84,9 +84,9 @@ Layer=false
 [layer_names]
 
 2d_physics/layer_1="walls"
-2d_physics/layer_2="players"
-2d_physics/layer_3="projectiles"
-2d_physics/layer_4="traps"
+2d_physics/layer_2="traps"
+2d_physics/layer_3="shuriken"
+2d_physics/layer_4="players"
 2d_physics/layer_5="flag"
 
 [rendering]

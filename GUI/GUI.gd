@@ -13,5 +13,5 @@ func _process(delta):
 	else:
 		get_node("VBoxContainer/Scores/").hide()
 		get_node("VBoxContainer/Text/VBoxContainer/Win Text").show()
-		get_node("VBoxContainer/Text/VBoxContainer/Winner").set_text(str(global.winner))
+		get_node("VBoxContainer/Text/VBoxContainer/Winner").set_text(str(global.winner) + "!!!")
 		get_node("VBoxContainer/Text/VBoxContainer/Restart").show()

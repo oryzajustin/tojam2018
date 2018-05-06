@@ -1,6 +1,51 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GUI/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.941406, 0.040451, 0.040451, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 128
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Main Menu" type="MarginContainer"]
 
@@ -21,7 +66,22 @@ custom_constants/margin_bottom = 80
 script = ExtResource( 1 )
 _sections_unfolded = [ "custom_constants" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+[node name="Panel" type="Panel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 3 )
+_sections_unfolded = [ "custom_styles" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -46,18 +106,21 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1680.0
-margin_bottom = 14.0
+margin_bottom = 143.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "NINJAM"
+custom_fonts/font = SubResource( 2 )
+text = "Ninjam"
 align = 1
+uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Menu Options" type="VBoxContainer" parent="VBoxContainer" index="1"]
 
@@ -65,10 +128,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 805.0
-margin_top = 18.0
-margin_right = 875.0
-margin_bottom = 902.0
+margin_left = 721.0
+margin_top = 147.0
+margin_right = 959.0
+margin_bottom = 861.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -85,9 +148,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 362.0
-margin_right = 70.0
-margin_bottom = 382.0
+margin_top = 215.0
+margin_right = 238.0
+margin_bottom = 276.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -95,6 +158,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -102,6 +166,7 @@ group = null
 text = "2 Players"
 flat = false
 align = 1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="3 Players" type="Button" parent="VBoxContainer/Menu Options" index="1"]
 
@@ -109,9 +174,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 432.0
-margin_right = 70.0
-margin_bottom = 452.0
+margin_top = 326.0
+margin_right = 238.0
+margin_bottom = 387.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -119,6 +184,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -133,9 +199,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 502.0
-margin_right = 70.0
-margin_bottom = 522.0
+margin_top = 437.0
+margin_right = 238.0
+margin_bottom = 498.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -143,6 +209,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -157,7 +224,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 906.0
+margin_top = 865.0
 margin_right = 1680.0
 margin_bottom = 920.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -166,7 +233,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "Made the Bu$y Boys at TOJam 2018"
+custom_fonts/font = SubResource( 1 )
+text = "Made by the Bu$y Boys at TOJam 2018"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0

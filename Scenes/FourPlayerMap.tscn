@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=8]
 
-[node name="Four Player Map" type="Node2D" index="0"]
+[node name="Four Player Map" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -52,34 +52,32 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="GUI" parent="." index="1" instance=ExtResource( 8 )]
 
-margin_left = 230.0
-margin_top = 720.0
-margin_right = 1209.0
-margin_bottom = 768.0
+margin_right = 1426.0
+margin_bottom = 786.0
 
 [node name="VBoxContainer" parent="GUI" index="0"]
 
-margin_right = 1023.0
-margin_bottom = 146.0
+margin_right = 1470.0
+margin_bottom = 830.0
 
 [node name="Text" parent="GUI/VBoxContainer" index="0"]
 
-margin_right = 1003.0
-margin_bottom = 50.0
+margin_right = 1450.0
+margin_bottom = 734.0
 
 [node name="VBoxContainer" parent="GUI/VBoxContainer/Text" index="0"]
 
-margin_left = 426.0
-margin_top = 0.0
-margin_right = 577.0
-margin_bottom = 50.0
+margin_left = 433.0
+margin_top = 234.0
+margin_right = 1017.0
+margin_bottom = 499.0
 
 [node name="Scores" parent="GUI/VBoxContainer" index="1"]
 
-margin_left = 201.0
-margin_top = 54.0
-margin_right = 801.0
-margin_bottom = 126.0
+margin_left = 425.0
+margin_top = 738.0
+margin_right = 1025.0
+margin_bottom = 810.0
 
 
 [editable path="GUI"]
