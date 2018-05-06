@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/swish_3.wav-adab51d309425a36c892a84aebc37757.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/swish_3.wav"
+source_md5="b665448abd0582f32c5694f877cdc3b9"
+
+dest_files=[ "res://.import/swish_3.wav-adab51d309425a36c892a84aebc37757.sample" ]
+dest_md5="91e65df5462c3ceea091b9de3f4c86f7"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
