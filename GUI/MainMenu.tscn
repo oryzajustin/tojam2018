@@ -70,8 +70,12 @@ _sections_unfolded = [ "custom_constants" ]
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1800.0
+margin_bottom = 1000.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -148,9 +152,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 215.0
+margin_top = 271.0
 margin_right = 238.0
-margin_bottom = 276.0
+margin_bottom = 332.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -170,6 +174,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="3 Players" type="Button" parent="VBoxContainer/Menu Options" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -199,9 +204,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 437.0
+margin_top = 382.0
 margin_right = 238.0
-margin_bottom = 498.0
+margin_bottom = 443.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

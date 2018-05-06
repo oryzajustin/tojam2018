@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/FourPlayerMap.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/main_map_two_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Ninja1_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Ninja4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=6]
+
+[node name="Two Player Map" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Map" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Spawn1" type="Position2D" parent="Map" index="2"]
+
+position = Vector2( 530, 180 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ninja1_1" parent="Map/Spawn1" index="0" instance=ExtResource( 3 )]
+
+[node name="Spawn4" type="Position2D" parent="Map" index="3"]
+
+editor/display_folded = true
+position = Vector2( 970, 670 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ninja4" parent="Map/Spawn4" index="0" instance=ExtResource( 4 )]
+
+[node name="Flag Spawn" type="Position2D" parent="Map" index="4"]
+
+editor/display_folded = true
+position = Vector2( 750, 425 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Flag" parent="Map/Flag Spawn" index="0" instance=ExtResource( 5 )]
+
+[node name="GUI" parent="." index="1" instance=ExtResource( 6 )]
+
+margin_right = 1426.0
+margin_bottom = 786.0
+
+[node name="VBoxContainer" parent="GUI" index="0"]
+
+margin_right = 1470.0
+margin_bottom = 830.0
+
+[node name="Text" parent="GUI/VBoxContainer" index="0"]
+
+margin_right = 1450.0
+margin_bottom = 734.0
+
+[node name="VBoxContainer" parent="GUI/VBoxContainer/Text" index="0"]
+
+margin_left = 433.0
+margin_top = 234.0
+margin_right = 1017.0
+margin_bottom = 499.0
+
+[node name="Scores" parent="GUI/VBoxContainer" index="1"]
+
+margin_left = 425.0
+margin_top = 738.0
+margin_right = 1025.0
+margin_bottom = 810.0
+
+[node name="camera" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[connection signal="player4_death" from="Map/Spawn4/Ninja4" to="." method="shake"]
+
+
+[editable path="GUI"]

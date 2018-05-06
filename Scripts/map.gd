@@ -22,7 +22,7 @@ func shake():
 		randomize()
 		offset.x = rand_range(-magnitude, magnitude)
 		offset.y = rand_range(-magnitude, magnitude)
-		camera.set_offset(offset)
+	camera.set_offset(offset)
 		
 		yield(get_tree(), "idle_frame")
 	time = 0

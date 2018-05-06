@@ -1,56 +1,43 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/FourPlayerMap.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/main_map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/main_map_two_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Ninja1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Ninja2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Ninja3.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Ninja4.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Ninja4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/flag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=6]
 
-[node name="Four Player Map" type="Node2D"]
+[node name="Two Player Map" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Map" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="Spawn1" type="Position2D" parent="Map" index="1"]
+[node name="Spawn1" type="Position2D" parent="Map" index="2"]
 
-position = Vector2( 250, 200 )
+editor/display_folded = true
+position = Vector2( 530, 180 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ninja1" parent="Map/Spawn1" index="0" instance=ExtResource( 3 )]
 
-[node name="Spawn2" type="Position2D" parent="Map" index="2"]
+[node name="Spawn4" type="Position2D" parent="Map" index="3"]
 
-position = Vector2( 1250, 200 )
+editor/display_folded = true
+position = Vector2( 970, 670 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ninja2" parent="Map/Spawn2" index="0" instance=ExtResource( 4 )]
+[node name="Ninja4" parent="Map/Spawn4" index="0" instance=ExtResource( 4 )]
 
-[node name="Spawn3" type="Position2D" parent="Map" index="3"]
+[node name="Flag Spawn" type="Position2D" parent="Map" index="4"]
 
-position = Vector2( 250, 650 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Ninja3" parent="Map/Spawn3" index="0" instance=ExtResource( 5 )]
-
-[node name="Spawn4" type="Position2D" parent="Map" index="4"]
-
-position = Vector2( 1250, 650 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Ninja4" parent="Map/Spawn4" index="0" instance=ExtResource( 6 )]
-
-[node name="Flag Spawn" type="Position2D" parent="Map" index="5"]
-
+editor/display_folded = true
 position = Vector2( 750, 425 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Flag" parent="Map/Flag Spawn" index="0" instance=ExtResource( 7 )]
+[node name="Flag" parent="Map/Flag Spawn" index="0" instance=ExtResource( 5 )]
 
-[node name="GUI" parent="." index="1" instance=ExtResource( 8 )]
+[node name="GUI" parent="." index="1" instance=ExtResource( 6 )]
 
 margin_right = 1426.0
 margin_bottom = 786.0
@@ -105,10 +92,6 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 
 [connection signal="player1_death" from="Map/Spawn1/Ninja1" to="." method="shake"]
-
-[connection signal="player2_death" from="Map/Spawn2/Ninja2" to="." method="shake"]
-
-[connection signal="player3_death" from="Map/Spawn3/Ninja3" to="." method="shake"]
 
 [connection signal="player4_death" from="Map/Spawn4/Ninja4" to="." method="shake"]
 

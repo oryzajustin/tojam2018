@@ -3,7 +3,7 @@ extends Node
 # Global file holds global variables and handles scene switching
 
 # Constants
-const MAX_SCORE = 10
+const MAX_SCORE = 500
 
 # Variables
 var current_scene_name = null
@@ -21,7 +21,7 @@ var spawn3 = null
 var spawn4 = null
 
 # Scenes
-var two_player_scene_path = "res://Scenes/main.tscn"
+var two_player_scene_path = "res://Scenes/main_two.tscn"
 var three_player_scene_path = "res://Scenes/main.tscn"
 var four_player_scene_path = "res://Scenes/main.tscn"
 

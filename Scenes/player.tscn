@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Electric - Shock.wav" type="AudioStream" id=2]
@@ -6,7 +6,13 @@
 [ext_resource path="res://Assets/Audio/coin8.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/sheepHit.wav" type="AudioStream" id=5]
 
-[node name="Player" type="KinematicBody2D" groups=[
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 6.4
+height = 7.20001
+
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -17,17 +23,17 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 MAX_SPEED = 300
+FLAG_CARRY_SPEED = 275
 MAX_TRAP = 1
 MAX_SHURIKEN = 1
 curr_num_trap = 1
 curr_num_shuriken = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3.57628e-06, 0 )
+position = Vector2( 3.57628e-06, 10 )
 scale = Vector2( 1.5625, 1 )
-build_mode = 0
-polygon = PoolVector2Array( 8, -10, 8, 20, -8, 20, -8, -10 )
+shape = SubResource( 1 )
 
 [node name="Up" type="Position2D" parent="." index="1"]
 

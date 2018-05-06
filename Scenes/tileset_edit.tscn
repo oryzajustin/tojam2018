@@ -30,7 +30,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall/StaticBody2D" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 25, -25, 25, 25, -25, 25, -25, -25 )
+polygon = PoolVector2Array( -15, -25, 15, -25, 25, -15, 25, 15, 15, 25, -15, 25, -25, 15, -25, -15 )
 
 [node name="Corner" type="Sprite" parent="." index="1" groups=[
 "walls",
@@ -55,8 +55,10 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Corner/StaticBody2D" index="0"]
 
+position = Vector2( 6.71574, 9.34364 )
+rotation = 0.77536
 build_mode = 0
-polygon = PoolVector2Array( 25, -25, 25, 25, -25, 25 )
+polygon = PoolVector2Array( -11.5494, 19.24, -11.1235, -23.1842, -3.98185, -30.184, 24.0171, -1.61721, -4.54967, 26.3817 )
 
 [node name="BG" type="Sprite" parent="." index="2"]
 

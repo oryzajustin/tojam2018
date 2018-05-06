@@ -73,6 +73,13 @@ wait_time = 1.0
 one_shot = true
 autostart = false
 
+[node name="Delay Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
 [connection signal="body_entered" from="Trigger Radius" to="." method="_on_Trigger_Radius_body_entered"]
 
 [connection signal="body_entered" from="Defuse Radius" to="." method="_on_Defuse_Radius_body_entered"]

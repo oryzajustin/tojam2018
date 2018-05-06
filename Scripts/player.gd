@@ -17,6 +17,7 @@ var flag = null
 
 # Player stats/gear
 export var MAX_SPEED = 300
+export var FLAG_CARRY_SPEED = 275
 export var MAX_TRAP = 1
 export var MAX_SHURIKEN = 1
 export var curr_num_trap = 1
@@ -56,7 +57,7 @@ func _process(delta):
 		print("Player is stunned... but now free!!!")
 		is_stunned = false
 		anim.play("idle_down")
-	if !is_dead and !is_stunned:
+	if !is_dead and !is_stunned and !is_flag_holder:
 		if Input.is_action_pressed(parent.getActionThrowShurikenKey()):
 			if shuriken_timer.get_time_left() == 0:
 				throw_shuriken()
@@ -67,19 +68,31 @@ func _process(delta):
 		if death_timer.get_time_left() == 0:
 			respawn()
 
-func _physics_process(delta):
+func _physics_process(delta):		
 	if !is_dead and !is_stunned:
 		if Input.is_action_pressed(parent.getActionUpKey()):
-			speed = MAX_SPEED
+			if is_flag_holder:
+				speed = FLAG_CARRY_SPEED
+			else:
+				speed = MAX_SPEED
 			direction = UP
 		elif Input.is_action_pressed(parent.getActionDownKey()):
-			speed = MAX_SPEED
+			if is_flag_holder:
+				speed = FLAG_CARRY_SPEED
+			else:
+				speed = MAX_SPEED
 			direction = DOWN
 		elif Input.is_action_pressed(parent.getActionLeftKey()):
-			speed = MAX_SPEED
+			if is_flag_holder:
+				speed = FLAG_CARRY_SPEED
+			else:
+				speed = MAX_SPEED
 			direction = LEFT
 		elif Input.is_action_pressed(parent.getActionRightKey()):
-			speed = MAX_SPEED
+			if is_flag_holder:
+				speed = FLAG_CARRY_SPEED
+			else:
+				speed = MAX_SPEED
 			direction = RIGHT
 		else:
 			speed = 0
@@ -128,8 +141,6 @@ func throw_shuriken():
 		elif direction == RIGHT:
 			anim.play("player_throw_right")
 			s.start_at(2 * PI, get_node("Right").global_position)
-	
-		
 
 func pickup_shuriken(pickup):
 	print("Going to try to pick up shuriken")
@@ -203,3 +214,5 @@ func respawn():
 	curr_num_trap = 1
 	# Need to get node positions from global variables...
 	self.global_position = parent.getRespawnLocation()
+	
+
