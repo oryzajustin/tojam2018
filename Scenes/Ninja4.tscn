@@ -4,7 +4,6 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/ninja_sprites_purple.png" type="Texture" id=3]
 
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "idle_down"
@@ -208,5 +207,7 @@ anims/walk_left = SubResource( 7 )
 anims/walk_right = SubResource( 8 )
 anims/walk_up = SubResource( 9 )
 blend_times = [  ]
+
+[connection signal="died" from="Player" to="." method="_on_Player_died"]
 
 

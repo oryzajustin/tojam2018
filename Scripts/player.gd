@@ -37,6 +37,8 @@ onready var stun_timer = get_node("Stun Timer")
 onready var zap_sound = get_node("zap")
 onready var throw_sound = get_node("throw")
 
+signal died
+
 func _ready():
 	# Play spawning animation
 	anim.play("spawn")
@@ -184,11 +186,13 @@ func death():
 		score_interval.stop()
 		flag.dropped()
 		is_flag_holder = false
+		#emit_signal("died")
 		#flag.global_position = self.get_global_position()
 	death_timer.start()
 	is_dead = true
 	get_node("CollisionPolygon2D").disabled = true
 	anim.play("player_death")
+	emit_signal("died")
 
 func respawn():
 	anim.play("idle_down")

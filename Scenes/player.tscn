@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/Electric - Shock.wav" type="AudioStream" id=2]
@@ -6,7 +6,13 @@
 [ext_resource path="res://Assets/Audio/coin8.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/sheepHit.wav" type="AudioStream" id=5]
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 6.39732
+height = 8.37172
+
+[node name="Player" type="KinematicBody2D" groups=[
 "players",
 ]]
 
@@ -22,73 +28,66 @@ MAX_SHURIKEN = 1
 curr_num_trap = 1
 curr_num_shuriken = 1
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
-
-position = Vector2( 3.57628e-06, 0 )
-scale = Vector2( 1.5625, 1 )
-build_mode = 0
-polygon = PoolVector2Array( 8, -10, 8, 20, -8, 20, -8, -10 )
-
-[node name="Up" type="Position2D" parent="." index="1"]
+[node name="Up" type="Position2D" parent="." index="0"]
 
 position = Vector2( 0, -30 )
 scale = Vector2( 0.986176, 1 )
 
-[node name="Down" type="Position2D" parent="." index="2"]
+[node name="Down" type="Position2D" parent="." index="1"]
 
 position = Vector2( 0, 40 )
 scale = Vector2( 0.986176, 1 )
 
-[node name="Left" type="Position2D" parent="." index="3"]
+[node name="Left" type="Position2D" parent="." index="2"]
 
 position = Vector2( -30, 0 )
 scale = Vector2( 0.986176, 1 )
 
-[node name="Right" type="Position2D" parent="." index="4"]
+[node name="Right" type="Position2D" parent="." index="3"]
 
 position = Vector2( 30, 0 )
 scale = Vector2( 0.986176, 1 )
 
-[node name="Score Interval" type="Timer" parent="." index="5"]
+[node name="Score Interval" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="Shuriken Container" type="Node" parent="." index="6"]
+[node name="Shuriken Container" type="Node" parent="." index="5"]
 
-[node name="Shuriken Timer" type="Timer" parent="." index="7"]
+[node name="Shuriken Timer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = true
 autostart = false
 
-[node name="Trap Container" type="Node" parent="." index="8"]
+[node name="Trap Container" type="Node" parent="." index="7"]
 
-[node name="Trap Timer" type="Timer" parent="." index="9"]
+[node name="Trap Timer" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="Death Timer" type="Timer" parent="." index="10"]
+[node name="Death Timer" type="Timer" parent="." index="9"]
 
 process_mode = 1
 wait_time = 3.6
 one_shot = true
 autostart = false
 
-[node name="Stun Timer" type="Timer" parent="." index="11"]
+[node name="Stun Timer" type="Timer" parent="." index="10"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="zap" type="AudioStreamPlayer" parent="." index="12"]
+[node name="zap" type="AudioStreamPlayer" parent="." index="11"]
 
 stream = ExtResource( 2 )
 volume_db = 0.0
@@ -96,7 +95,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="throw" type="AudioStreamPlayer2D" parent="." index="13"]
+[node name="throw" type="AudioStreamPlayer2D" parent="." index="12"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
@@ -106,7 +105,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="pickup" type="AudioStreamPlayer2D" parent="." index="14"]
+[node name="pickup" type="AudioStreamPlayer2D" parent="." index="13"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -116,7 +115,7 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="flag" type="AudioStreamPlayer2D" parent="." index="15"]
+[node name="flag" type="AudioStreamPlayer2D" parent="." index="14"]
 
 stream = ExtResource( 5 )
 volume_db = 0.0
@@ -125,5 +124,11 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." index="15"]
+
+position = Vector2( 3.57628e-06, 2.82687 )
+scale = Vector2( 1.5625, 1.28758 )
+shape = SubResource( 1 )
 
 

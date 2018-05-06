@@ -208,4 +208,6 @@ anims/walk_right = SubResource( 8 )
 anims/walk_up = SubResource( 9 )
 blend_times = [  ]
 
+[connection signal="died" from="Player" to="." method="_on_Player_died"]
+
 
