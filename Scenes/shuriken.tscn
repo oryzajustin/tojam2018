@@ -5,13 +5,13 @@
 [ext_resource path="res://Assets/Audio/nutfall.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/crash.wav" type="AudioStream" id=4]
 
-[node name="Shuriken" type="KinematicBody2D" index="0" groups=[
+[node name="Shuriken" type="KinematicBody2D" groups=[
 "projectiles",
 ]]
 
 input_pickable = true
 collision_layer = 4
-collision_mask = 3
+collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]

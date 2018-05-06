@@ -266,7 +266,7 @@ tracks/0/keys = {
 "values": [ 31, 36 ]
 }
 
-[node name="Ninja1" type="Node2D"]
+[node name="Ninja1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -303,7 +303,5 @@ anims/walk_left = SubResource( 12 )
 anims/walk_right = SubResource( 13 )
 anims/walk_up = SubResource( 14 )
 blend_times = [  ]
-
-[connection signal="died" from="Player" to="." method="_on_Player_died"]
 
 
