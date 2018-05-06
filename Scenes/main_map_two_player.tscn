@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Resources/game_tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/Audio/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav" type="AudioStream" id=2]
-[ext_resource path="res://Scripts/bgmusic.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/bgmusic.gd" type="Script" id=1]
+[ext_resource path="res://Resources/game_tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Audio/Arcade-Game-Royalty-Free-Music-8-Bit-Video-Console-Audio.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Bumblebee loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/Mr. Blue Sky NES.wav" type="AudioStream" id=5]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -13,7 +16,7 @@ __meta__ = {
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -36,11 +39,26 @@ __meta__ = {
 
 [node name="bg" type="AudioStreamPlayer" parent="." index="1"]
 
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 volume_db = -10.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 3 )
+
+[node name="bg2" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="bg3" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

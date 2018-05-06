@@ -179,6 +179,8 @@ func trigger_trap():
 	stun_timer.start()
 	is_stunned = true
 	anim.play("player_stun")
+	if is_dead:
+		anim.stop()
 
 func flag_stolen():
 	is_flag_holder = false
@@ -199,6 +201,8 @@ func death():
 		is_flag_holder = false
 		#emit_signal("died")
 		#flag.global_position = self.get_global_position()
+	if is_stunned:
+		anim.stop()
 	death_timer.start()
 	is_dead = true
 	get_node("CollisionPolygon2D").disabled = true
