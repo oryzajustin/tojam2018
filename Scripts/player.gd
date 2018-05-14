@@ -45,7 +45,8 @@ signal died
 
 func _ready():
 	# Play spawning animation
-	anim.play("spawn")
+	anim.play("player_spawn")
+	anim.queue("idle_down")
 	# Hacky fix for the way the ninjas spawn...
 	direction = DOWN
 	set_physics_process(true)
@@ -205,8 +206,6 @@ func death():
 		score_interval.stop()
 		flag.dropped()
 		is_flag_holder = false
-		#emit_signal("died")
-		#flag.global_position = self.get_global_position()
 	if is_stunned:
 		anim.stop()
 	death_timer.start()
@@ -216,7 +215,8 @@ func death():
 	emit_signal("died")
 
 func respawn():
-	anim.play("idle_down")
+	anim.play("player_spawn")
+	anim.queue("idle_down")
 	is_dead = false
 	get_node("CollisionPolygon2D").disabled = false
 	# Reset inventory

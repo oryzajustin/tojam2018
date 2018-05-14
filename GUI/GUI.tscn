@@ -3,17 +3,9 @@
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFont" id=5]
-
-size = 48
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
-
 [sub_resource type="DynamicFont" id=1]
 
-size = 64
+size = 48
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
@@ -43,7 +35,15 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GUI" type="MarginContainer"]
+[sub_resource type="DynamicFont" id=5]
+
+size = 64
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="GUI" type="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -60,7 +60,7 @@ custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
 script = ExtResource( 1 )
-_sections_unfolded = [ "Margin", "custom_constants" ]
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
 
@@ -70,8 +70,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1900.0
-margin_bottom = 1060.0
+margin_right = 1260.0
+margin_bottom = 780.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -87,8 +87,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1880.0
-margin_bottom = 964.0
+margin_right = 1240.0
+margin_bottom = 684.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -104,10 +104,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 648.0
-margin_top = 349.0
-margin_right = 1232.0
-margin_bottom = 614.0
+margin_left = 328.0
+margin_top = 209.0
+margin_right = 912.0
+margin_bottom = 474.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -132,7 +132,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "The winner is"
 align = 1
 percent_visible = 1.0
@@ -154,7 +154,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -176,7 +176,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "Press space to restart..."
 align = 1
 percent_visible = 1.0
@@ -189,10 +189,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 640.0
-margin_top = 968.0
-margin_right = 1240.0
-margin_bottom = 1040.0
+margin_left = 320.0
+margin_top = 688.0
+margin_right = 920.0
+margin_bottom = 760.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -201,7 +201,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 12
 custom_constants/separation = 200
 alignment = 1
-_sections_unfolded = [ "Size Flags", "custom_constants" ]
+_sections_unfolded = [ "Rect", "Size Flags", "custom_constants" ]
 
 [node name="Player 1 Score" type="Label" parent="VBoxContainer/Scores" index="0"]
 
@@ -216,7 +216,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.828125, 0.181152, 0.181152, 1 )
 align = 1
 percent_visible = 1.0
@@ -239,7 +239,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.291534, 0.562181, 0.910156, 1 )
 align = 1
 percent_visible = 1.0
@@ -262,7 +262,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.847656, 0.595594, 0.271515, 1 )
 align = 1
 percent_visible = 1.0
@@ -285,7 +285,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.59979, 0.241089, 0.78125, 1 )
 align = 1
 percent_visible = 1.0

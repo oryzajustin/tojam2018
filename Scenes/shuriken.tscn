@@ -62,7 +62,7 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 15, 10, 11, 12, 13, 14, 15, 10 ]
 }
 
-[node name="Shuriken" type="KinematicBody2D" index="0" groups=[
+[node name="Shuriken" type="KinematicBody2D" groups=[
 "projectiles",
 ]]
 
@@ -72,7 +72,7 @@ collision_mask = 9
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-speed = 500
+speed = 525
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -88,6 +88,7 @@ _sections_unfolded = [ "Animation", "Transform" ]
 
 build_mode = 0
 polygon = PoolVector2Array( 10, 0, 0, 10, -10, 0, 0, -10 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Pickup Radius" type="Area2D" parent="." index="2"]
 

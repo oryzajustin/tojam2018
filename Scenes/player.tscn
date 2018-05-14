@@ -9,8 +9,8 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 6.4
-height = 7.20001
+radius = 7.68491
+height = 16.0474
 
 [node name="Player" type="KinematicBody2D" groups=[
 "players",
@@ -31,7 +31,7 @@ curr_num_shuriken = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 3.57628e-06, 10 )
+position = Vector2( 0, 4 )
 scale = Vector2( 1.5625, 1 )
 shape = SubResource( 1 )
 

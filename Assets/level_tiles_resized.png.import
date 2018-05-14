@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ninja_sprites_purple.png-0fd2409b47c2e7edc8b506b3d4e27cb8.stex"
+path="res://.import/level_tiles_resized.png-5346c2dbc945868f74add23fe5e6a8cf.stex"
 
 [deps]
 
-source_file="res://Assets/ninja_sprites_purple.png"
-source_md5="d06033bbcfc3a0f04e351b6bb045b7d0"
+source_file="res://Assets/level_tiles_resized.png"
+source_md5="98084a721f407aa147285bc4f501bcd5"
 
-dest_files=[ "res://.import/ninja_sprites_purple.png-0fd2409b47c2e7edc8b506b3d4e27cb8.stex" ]
-dest_md5="3a99708964bf40963e4ec1eee923f602"
+dest_files=[ "res://.import/level_tiles_resized.png-5346c2dbc945868f74add23fe5e6a8cf.stex" ]
+dest_md5="93f04ffa8a933e5134daa8437bab7b7c"
 
 [params]
 

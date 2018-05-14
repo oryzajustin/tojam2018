@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GUI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
@@ -10,7 +10,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.941406, 0.040451, 0.040451, 1 )
+bg_color = Color( 0.425781, 0.0282745, 0.0282745, 1 )
 draw_center = true
 border_width_left = 0
 border_width_top = 0
@@ -40,6 +40,14 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="DynamicFont" id=4]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [sub_resource type="DynamicFont" id=3]
 
 size = 48
@@ -48,7 +56,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Main Menu" type="MarginContainer" index="0"]
+[node name="Main Menu" type="MarginContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -60,10 +68,6 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/margin_right = 120
-custom_constants/margin_top = 80
-custom_constants/margin_left = 120
-custom_constants/margin_bottom = 80
 script = ExtResource( 1 )
 _sections_unfolded = [ "custom_constants" ]
 
@@ -73,10 +77,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 1800.0
-margin_bottom = 1000.0
+margin_left = 8.0
+margin_right = 1280.0
+margin_bottom = 800.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -84,9 +87,30 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/panel = SubResource( 1 )
-_sections_unfolded = [ "Material", "Visibility", "custom_styles" ]
+_sections_unfolded = [ "Margin", "Material", "Visibility", "custom_styles" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+[node name="MarginContainer" type="MarginContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_right = 1280.0
+margin_bottom = 800.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -94,8 +118,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 120.0
 margin_top = 80.0
-margin_right = 1800.0
-margin_bottom = 1000.0
+margin_right = 1152.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -104,13 +128,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
 
-[node name="Title" type="Label" parent="VBoxContainer" index="0"]
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1680.0
+margin_right = 1032.0
 margin_bottom = 143.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -127,16 +151,50 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Menu Options" type="VBoxContainer" parent="VBoxContainer" index="1"]
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 721.0
 margin_top = 147.0
-margin_right = 959.0
-margin_bottom = 861.0
+margin_right = 1032.0
+margin_bottom = 485.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "Play with 4 people!
+
+Controls:
+Player 1 uses WASD, Q for shuriken, and E for trap
+Player 2 uses YGHJ, T for shuriken, and U for trap
+Player 3 uses PL;', O for shuriken, and [ for trap
+Player 4 uses arrow keys, enter for shuriken, and shift for trap
+
+First one to hold the flag for 500 points wins!
+Shurikens are lethal and can be picked up again! 
+Traps stun and can be defused after placing!"
+align = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_fonts" ]
+
+[node name="Menu Options" type="VBoxContainer" parent="MarginContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 440.0
+margin_top = 489.0
+margin_right = 592.0
+margin_bottom = 581.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -147,8 +205,9 @@ custom_constants/separation = 50
 alignment = 1
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="2 Players" type="Button" parent="VBoxContainer/Menu Options" index="0"]
+[node name="2 Players" type="Button" parent="MarginContainer/VBoxContainer/Menu Options" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -173,7 +232,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="3 Players" type="Button" parent="VBoxContainer/Menu Options" index="1"]
+[node name="3 Players" type="Button" parent="MarginContainer/VBoxContainer/Menu Options" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -199,15 +258,15 @@ text = "3 Players"
 flat = false
 align = 1
 
-[node name="4 Players" type="Button" parent="VBoxContainer/Menu Options" index="2"]
+[node name="4 Players" type="Button" parent="MarginContainer/VBoxContainer/Menu Options" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 382.0
-margin_right = 238.0
-margin_bottom = 443.0
+margin_top = 15.0
+margin_right = 152.0
+margin_bottom = 76.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -220,19 +279,19 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "4 Players"
+text = "Start!"
 flat = false
 align = 1
 
-[node name="Version" type="Label" parent="VBoxContainer" index="2"]
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 865.0
-margin_right = 1680.0
-margin_bottom = 920.0
+margin_top = 585.0
+margin_right = 1032.0
+margin_bottom = 640.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -254,10 +313,10 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="pressed" from="VBoxContainer/Menu Options/2 Players" to="." method="_on_2_Players_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/2 Players" to="." method="_on_2_Players_pressed"]
 
-[connection signal="pressed" from="VBoxContainer/Menu Options/3 Players" to="." method="_on_3_Players_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/3 Players" to="." method="_on_3_Players_pressed"]
 
-[connection signal="pressed" from="VBoxContainer/Menu Options/4 Players" to="." method="_on_4_Players_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Menu Options/4 Players" to="." method="_on_4_Players_pressed"]
 
 
